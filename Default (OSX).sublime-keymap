@@ -36,4 +36,15 @@
 // ----- Project commands
 { "keys": [" ", "p", "t"], "command": "toggle_side_bar" },
 { "keys": [" ", "p", "f"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+
+// ----- Sidebar nav
+{ "keys": ["h"], "command": "move", "args": {"by": "characters", "forward": false}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+{ "keys": ["j"], "command": "move", "args": {"by": "lines", "forward": true}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+{ "keys": ["k"], "command": "move", "args": {"by": "lines", "forward": false}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+{ "keys": ["l"], "command": "move", "args": {"by": "characters", "forward": true}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+
+// ----- Git
+{ "keys": [" ", "g", "s"], "command": "git_status", "args": {}, "context": [{"key": "setting.command_mode"}] },
+{ "keys": ["j"], "command": "git_status_move", "args": {"goto": "item:next"}, "context": [{ "key": "selector", "operator": "equal", "operand": "text.git-status" }] },
+{ "keys": ["k"], "command": "git_status_move", "args": {"goto": "item:prev"}, "context": [{ "key": "selector", "operator": "equal", "operand": "text.git-status" }] },
 ]

@@ -41,4 +41,4 @@ additional_packages = [
     "tern_for_sublime",
     "TodoReview",
     "Varnish VCL",
-    ]
+]
