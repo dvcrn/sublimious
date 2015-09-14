@@ -59,8 +59,8 @@ class Layer():
     ]
 
     syntax_definitions = {
-        "Python3": ['sublimious']
+        "Python3": ['.sublimious']
    }
 
-    def init(self):
+    def init(self, config):
         pass

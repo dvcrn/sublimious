@@ -7,6 +7,24 @@ layers = [
     'git'
 ]
 
+user_config = {
+    # Style
+    "theme": "Soda Dark.sublime-theme",
+    "color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
+    "font_face": "Hack",
+    "font_size": 18,
+
+    # Appearance
+    "line_numbers": False,
+    "draw_white_space": "all",
+    "word_wrap": True,
+
+    # Behavior
+    "translate_tabs_to_spaces": True,
+    "ensure_newline_at_eof_on_save": True,
+    "trim_trailing_white_space_on_save": True,
+}
+
 # Everything else that is not part of a layer. These packages are normal
 # package control packages
 additional_packages = [

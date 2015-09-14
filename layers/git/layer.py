@@ -15,5 +15,5 @@ class Layer():
 
     syntax_definitions = {}
 
-    def init(self):
+    def init(self, config):
         pass
