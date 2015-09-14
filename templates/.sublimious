@@ -1,0 +1,46 @@
+# This file is read by sublimious. Feel free to put your stuff here.
+
+layers = [
+    'core'
+]
+
+additional_packages = [
+    "AdvancedNewFile",
+    "All Autocomplete",
+    "AutoPEP8",
+    "Babel",
+    "Base16 Color Schemes",
+    "Better CoffeeScript",
+    "BracketHighlighter",
+    "CodeFormatter",
+    "Djaneiro",
+    "DocBlockr",
+    "EasyMotion",
+    "Emmet",
+    "Enhanced Clojure",
+    "Fix Mac Path",
+    "GitGutter",
+    "Jedi - Python autocompletion",
+    "LESS",
+    "nginx",
+    "PHP Getters and Setters",
+    "Puppet",
+    "Python 3",
+    "SaltStack-related syntax highlighting and snippets",
+    "Sass",
+    "SCSS",
+    "SFTP",
+    "SublimeGit",
+    "SublimeLinter-contrib-jslint",
+    "SublimeLinter-contrib-puppet",
+    "SublimeLinter-contrib-scss-lint",
+    "SublimeLinter-flake8",
+    "SublimeLinter-flow",
+    "SublimeLinter-json",
+    "SublimeLinter-php",
+    "SublimeLinter-pyyaml",
+    "SublimeREPL",
+    "tern_for_sublime",
+    "TodoReview",
+    "Varnish VCL",
+    ]
