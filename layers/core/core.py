@@ -10,7 +10,8 @@ class Layer():
         "Theme - Nil",
         "Theme - Soda",
         "Theme - Spacegray",
+        "BracketHighlighter",
     ]
 
     def init(self):
-        print("Sublimious loaded!")
+        pass

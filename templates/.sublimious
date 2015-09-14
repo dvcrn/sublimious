@@ -1,7 +1,8 @@
 # This file is read by sublimious. Feel free to put your stuff here.
 
 layers = [
-    'core'
+    'core',
+    'git'
 ]
 
 additional_packages = [
@@ -11,7 +12,6 @@ additional_packages = [
     "Babel",
     "Base16 Color Schemes",
     "Better CoffeeScript",
-    "BracketHighlighter",
     "CodeFormatter",
     "Djaneiro",
     "DocBlockr",
@@ -19,7 +19,6 @@ additional_packages = [
     "Emmet",
     "Enhanced Clojure",
     "Fix Mac Path",
-    "GitGutter",
     "Jedi - Python autocompletion",
     "LESS",
     "nginx",
@@ -30,7 +29,6 @@ additional_packages = [
     "Sass",
     "SCSS",
     "SFTP",
-    "SublimeGit",
     "SublimeLinter-contrib-jslint",
     "SublimeLinter-contrib-puppet",
     "SublimeLinter-contrib-scss-lint",

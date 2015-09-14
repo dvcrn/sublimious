@@ -2,6 +2,7 @@ from importlib.machinery import SourceFileLoader
 import json
 import sublime
 import os
+import itertools
 
 sublime_dir = os.path.dirname(sublime.packages_path())
 packages_dir = os.path.join(sublime_dir, 'Packages')
@@ -28,13 +29,17 @@ for layer in config_file.layers:
     layer_instance = layer_class.Layer()
     layer_instance.init()
 
+    print("%s layer loaded!" % layer)
+
     layers.append(layer_instance)
 
 # Collect all packages
 required_packages = list(map(lambda i: i.required_packages, layers))
 
 # Push all additional packages
-all_packages = list(*required_packages) + config_file.additional_packages
+required_packages.append(config_file.additional_packages)
+
+all_packages = list(itertools.chain(*required_packages))
 
 # add all packages to sublime settings file
 with open(sublime_settings_file, "w") as settings:
