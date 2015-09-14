@@ -35,12 +35,22 @@ for layer in config_file.layers:
 
 # Collect all packages
 required_packages = list(map(lambda i: i.required_packages, layers))
-
-# Push all additional packages
 required_packages.append(config_file.additional_packages)
-
 all_packages = list(itertools.chain(*required_packages))
 
 # add all packages to sublime settings file
 with open(sublime_settings_file, "w") as settings:
     settings.write(json.dumps({'installed_packages': all_packages}))
+
+# Get all keybinding definitions and save to keymapfile
+keybindings = list(map(lambda i: i.keymap, layers))
+with open("Default.sublime-keymap", "w") as settings:
+    settings.write(json.dumps(list(itertools.chain(*keybindings))))
+
+syntax_definitions = {}
+for layer in layers:
+    syntax_definitions.update(layer.syntax_definitions)
+
+for syntax, value in syntax_definitions.items():
+    with open("%s.sublime-settings" % syntax, "w") as syntax_file:
+        syntax_file.write(json.dumps({"extensions": value}))

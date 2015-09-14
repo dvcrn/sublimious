@@ -1,10 +1,14 @@
 # This file is read by sublimious. Feel free to put your stuff here.
 
+# Layer configuration. These layers will get installed upon reload
+# Check sublimious/layers for all available layers
 layers = [
     'core',
     'git'
 ]
 
+# Everything else that is not part of a layer. These packages are normal
+# package control packages
 additional_packages = [
     "AdvancedNewFile",
     "All Autocomplete",
