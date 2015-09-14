@@ -1,38 +1,41 @@
 from importlib.machinery import SourceFileLoader
-import sublime, sublime_plugin
+import json
+import sublime
 import os
 
+sublime_dir = os.path.dirname(sublime.packages_path())
+packages_dir = os.path.join(sublime_dir, 'Packages')
+user_dir = os.path.join(packages_dir, 'User')
+
+sublime_settings_file = os.path.join(user_dir, 'Package Control.sublime-settings')
+
+current_path = os.path.dirname(os.path.realpath(__file__))
 config_path = "~/.sublimious"
+
+# Load sublimious config file or template
 if not os.path.exists(config_path):
-    config_path = "%s/%s" % (os.path.dirname(os.path.realpath(__file__)), "templates/.sublimious")
+    config_path = "%s/%s" % (current_path, "templates/.sublimious")
 
 config_file = SourceFileLoader("", config_path).load_module()
 
-print(config_file.layers)
-print(config_file.additional_packages)
+# Collect all layers
+layers = []
+for layer in config_file.layers:
+    layer_path = "%s/%s" % (current_path, "layers/%s" % layer)
+    layer_init_file = "%s/%s.py" % (layer_path, layer)
 
+    layer_class = SourceFileLoader("", layer_init_file).load_module()
+    layer_instance = layer_class.Layer()
+    layer_instance.init()
 
-class Sublimious(sublime_plugin.EventListener):
-    def on_load(self, view):
-        print(view.fileName(), "just got loaded")
+    layers.append(layer_instance)
 
-    def on_pre_save(self, view):
-        print(view.fileName(), "is about to be saved")
+# Collect all packages
+required_packages = list(map(lambda i: i.required_packages, layers))
 
-    def onPostSave(self, view):
-        print(view.fileName(), "just got saved")
+# Push all additional packages
+all_packages = list(*required_packages) + config_file.additional_packages
 
-    def onNew(self, view):
-        print("new file")
-
-    def onModified(self, view):
-        print(view.fileName(), "modified")
-
-    def onActivated(self, view):
-        print(view.fileName(), "is now the active view")
-
-    def onClose(self, view):
-        print(view.fileName(), "is no more")
-
-    def onClone(self, view):
-        print(view.fileName(), "just got cloned")
+# add all packages to sublime settings file
+with open(sublime_settings_file, "w") as settings:
+    settings.write(json.dumps({'installed_packages': all_packages}))

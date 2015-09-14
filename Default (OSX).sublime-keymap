@@ -4,14 +4,14 @@
 { "keys": ["f", "d"], "command": "_enter_normal_mode", "args": {"mode": "mode_visual_line"}, "context": [{"key": "vi_mode_visual_line"}] },
 { "keys": ["f", "d"], "command": "_enter_normal_mode", "args": {"mode": "mode_visual"}, "context": [{"key": "vi_mode_visual"}] },
 
-{ "keys": ["f", "d"], "command": "single_selection", "context": [ { "key": "num_selections", "operator": "not_equal", "operand": 1 } ] },
-{ "keys": ["f", "d"], "command": "clear_fields", "context": [ { "key": "has_next_field", "operator": "equal", "operand": true } ] },
-{ "keys": ["f", "d"], "command": "clear_fields", "context": [ { "key": "has_prev_field", "operator": "equal", "operand": true } ] },
-{ "keys": ["f", "d"], "command": "hide_panel", "args": {"cancel": true}, "context": [ { "key": "panel_visible", "operator": "equal", "operand": true } ]
+{ "keys": ["f", "d"], "command": "single_selection", "context": [ { "key": "num_selections", "operator": "not_equal", "operand": 1 }, {"key": "setting.command_mode"} ] },
+{ "keys": ["f", "d"], "command": "clear_fields", "context": [ { "key": "has_next_field", "operator": "equal", "operand": true }, {"key": "setting.command_mode"} ] },
+{ "keys": ["f", "d"], "command": "clear_fields", "context": [ { "key": "has_prev_field", "operator": "equal", "operand": true }, {"key": "setting.command_mode"} ] },
+{ "keys": ["f", "d"], "command": "hide_panel", "args": {"cancel": true}, "context": [ { "key": "panel_visible", "operator": "equal", "operand": true }, {"key": "setting.command_mode"} ]
     },
-{ "keys": ["f", "d"], "command": "hide_overlay", "context": [ { "key": "overlay_visible", "operator": "equal", "operand": true } ] },
-{ "keys": ["f", "d"], "command": "hide_popup", "context": [ { "key": "popup_visible", "operator": "equal", "operand": true } ] },
-{ "keys": ["f", "d"], "command": "hide_auto_complete", "context": [ { "key": "auto_complete_visible", "operator": "equal", "operand": true } ] },
+{ "keys": ["f", "d"], "command": "hide_overlay", "context": [ { "key": "overlay_visible", "operator": "equal", "operand": true }, {"key": "setting.command_mode"} ] },
+{ "keys": ["f", "d"], "command": "hide_popup", "context": [ { "key": "popup_visible", "operator": "equal", "operand": true }, {"key": "setting.command_mode"} ] },
+{ "keys": ["f", "d"], "command": "hide_auto_complete", "context": [ { "key": "auto_complete_visible", "operator": "equal", "operand": true }, {"key": "setting.command_mode"} ] },
 
 // ----- Window commands
 // Window management powered by Origami
@@ -35,4 +35,5 @@
 
 // ----- Project commands
 { "keys": [" ", "p", "t"], "command": "toggle_side_bar" },
+{ "keys": [" ", "p", "f"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 ]

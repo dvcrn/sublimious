@@ -1,5 +1,5 @@
-class core():
-    def required_packages = [
+class Layer():
+    required_packages = [
         "Vintage-Origami",
         "Vintageous",
         "Origami",
