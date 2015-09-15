@@ -19,6 +19,7 @@ def plugin_loaded():
     # Append the dir to path, so that loading stuff works
     sys.path.append(current_path)
     from lib.io import load_python_file, write_sublimious_file
+    from lib import collector
 
     # Load sublimious config file or template
     if not os.path.exists(config_path):
@@ -48,39 +49,16 @@ def plugin_loaded():
         print("%s layer loaded!" % layer)
 
     # Collect all packages
-    required_packages = list(map(lambda i: i.required_packages, layers))
-    required_packages.append(config_file.additional_packages)
-    all_packages = list(itertools.chain(*required_packages))
-
-    # add all packages to sublime settings file
+    all_packages = collector.collect_key(layers, "required_packages") + config_file.additional_packages
     write_sublimious_file(pcontrol_settings, json.dumps({'installed_packages': all_packages}))
 
     # Get all keybinding definitions and save to keymapfile
-    keybindings = list(map(lambda i: i.keymap, layers))
-    write_sublimious_file("Default.sublime-keymap", json.dumps(list(itertools.chain(*keybindings))))
+    write_sublimious_file("%s/Default.sublime-keymap" % current_path, json.dumps(collector.collect_key(layers, "keymap")))
 
     # Generate a bunch of syntax files depending on layer config
-    syntax_definitions = {}
-    for layer in layers:
-        if not hasattr(layer, "syntax_definitions"):
-            continue
-
-        for syntax, files in layer.syntax_definitions.items():
-            if syntax not in syntax_definitions:
-                syntax_definitions[syntax] = {"extensions": []}
-
-            syntax_definitions[syntax]["extensions"] = syntax_definitions[syntax]["extensions"] + files
-
-        if not hasattr(layer, "color_scheme_definitions"):
-            continue
-
-        for syntax, color_schemes in layer.color_scheme_definitions.items():
-            if "color_scheme" not in syntax_definitions[syntax]:
-                syntax_definitions[syntax]["color_scheme"] = color_schemes
-
-
+    syntax_definitions = collector.collect_syntax_specific_settings(layers)
     for syntax, value in syntax_definitions.items():
-        write_sublimious_file("%s.sublime-settings" % (syntax), json.dumps(value))
+        write_sublimious_file("%s/%s.sublime-settings" % (current_path, syntax), json.dumps(value))
 
     # Take control over sublime settings file
     write_sublimious_file(settings_file, json.dumps(default_configuration))
