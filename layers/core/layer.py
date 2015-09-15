@@ -38,33 +38,33 @@ class Layer():
         {"keys": [" ", "w", "c"], "command": "destroy_pane", "args": {"direction": "self"}, "context": [{"key": "setting.command_mode"}]},
 
         # Panel navigation
-        {"keys": [" ", "w", "0"], "command": "focus_side_bar"},
-        {"keys": [" ", "w", "1"], "command": "focus_group", "args": {"group": 0}},
-        {"keys": [" ", "w", "2"], "command": "focus_group", "args": {"group": 1}},
-        {"keys": [" ", "w", "3"], "command": "focus_group", "args": {"group": 2}},
-        {"keys": [" ", "w", "4"], "command": "focus_group", "args": {"group": 3}},
-        {"keys": [" ", "w", "5"], "command": "focus_group", "args": {"group": 4}},
-        {"keys": [" ", "w", "6"], "command": "focus_group", "args": {"group": 5}},
-        {"keys": [" ", "w", "7"], "command": "focus_group", "args": {"group": 6}},
-        {"keys": [" ", "w", "8"], "command": "focus_group", "args": {"group": 7}},
-        {"keys": [" ", "w", "9"], "command": "focus_group", "args": {"group": 8}},
+        {"keys": [" ", "w", "0"], "command": "focus_side_bar", "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "1"], "command": "focus_group", "args": {"group": 0}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "2"], "command": "focus_group", "args": {"group": 1}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "3"], "command": "focus_group", "args": {"group": 2}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "4"], "command": "focus_group", "args": {"group": 3}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "5"], "command": "focus_group", "args": {"group": 4}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "6"], "command": "focus_group", "args": {"group": 5}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "7"], "command": "focus_group", "args": {"group": 6}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "8"], "command": "focus_group", "args": {"group": 7}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "w", "9"], "command": "focus_group", "args": {"group": 8}, "context": [{"key": "setting.command_mode"}]},
 
-        {"keys": [" ", "0"], "command": "focus_side_bar"},
-        {"keys": [" ", "1"], "command": "focus_group", "args": {"group": 0}},
-        {"keys": [" ", "2"], "command": "focus_group", "args": {"group": 1}},
-        {"keys": [" ", "3"], "command": "focus_group", "args": {"group": 2}},
-        {"keys": [" ", "4"], "command": "focus_group", "args": {"group": 3}},
-        {"keys": [" ", "5"], "command": "focus_group", "args": {"group": 4}},
-        {"keys": [" ", "6"], "command": "focus_group", "args": {"group": 5}},
-        {"keys": [" ", "7"], "command": "focus_group", "args": {"group": 6}},
-        {"keys": [" ", "8"], "command": "focus_group", "args": {"group": 7}},
-        {"keys": [" ", "9"], "command": "focus_group", "args": {"group": 8}},
+        {"keys": [" ", "0"], "command": "focus_side_bar", "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "1"], "command": "focus_group", "args": {"group": 0}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "2"], "command": "focus_group", "args": {"group": 1}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "3"], "command": "focus_group", "args": {"group": 2}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "4"], "command": "focus_group", "args": {"group": 3}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "5"], "command": "focus_group", "args": {"group": 4}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "6"], "command": "focus_group", "args": {"group": 5}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "7"], "command": "focus_group", "args": {"group": 6}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "8"], "command": "focus_group", "args": {"group": 7}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "9"], "command": "focus_group", "args": {"group": 8}, "context": [{"key": "setting.command_mode"}]},
 
 
         # ----- Project commands
-        {"keys": [" ", "p", "t"], "command": "toggle_side_bar"},
+        {"keys": [" ", "p", "t"], "command": "toggle_side_bar", "context": [{"key": "setting.command_mode"}]},
         {"keys": [" ", "p", "f"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": True}},
-        {"keys": [" ", "p", "c"], "command": "advanced_new_file_new"},
+        {"keys": [" ", "p", "c"], "command": "advanced_new_file_new", "context": [{"key": "setting.command_mode"}]},
 
         # ----- Sidebar nav
         {"keys": ["h"], "command": "move", "args": {"by": "characters", "forward": False}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
@@ -79,6 +79,12 @@ class Layer():
         {"keys": [" ", "e", "l"], "command": "sublimelinter_show_all_errors", "context": [{"key": "setting.command_mode"}]},
         {"keys": [" ", "e", "n"], "command": "sublimelinter_goto_error", "args": {"direction": "next"}, "context": [{"key": "setting.command_mode"}]},
         {"keys": [" ", "e", "p"], "command": "sublimelinter_show_all_errors", "args": {"direction": "previous"}, "context": [{"key": "setting.command_mode"}]},
+
+        # ----- Selection
+        {"keys": [" ", "s", "e"], "command": "find_all_under", "context": [{"key": "setting.command_mode"}]},
+
+        # ----- File
+        {"keys": [" ", "f", "m"], "command": "advanced_new_file_move", "context": [{"key": "setting.command_mode"}]},
     ]
 
     syntax_definitions = {

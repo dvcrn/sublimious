@@ -62,14 +62,25 @@ def plugin_loaded():
     # Generate a bunch of syntax files depending on layer config
     syntax_definitions = {}
     for layer in layers:
+        if not hasattr(layer, "syntax_definitions"):
+            continue
+
         for syntax, files in layer.syntax_definitions.items():
             if syntax not in syntax_definitions:
-                syntax_definitions[syntax] = []
+                syntax_definitions[syntax] = {"extensions": []}
 
-            syntax_definitions[syntax] = syntax_definitions[syntax] + files
+            syntax_definitions[syntax]["extensions"] = syntax_definitions[syntax]["extensions"] + files
+
+        if not hasattr(layer, "color_scheme_definitions"):
+            continue
+
+        for syntax, color_schemes in layer.color_scheme_definitions.items():
+            if "color_scheme" not in syntax_definitions[syntax]:
+                syntax_definitions[syntax]["color_scheme"] = color_schemes
+
 
     for syntax, value in syntax_definitions.items():
-        write_sublimious_file("%s.sublime-settings" % (syntax), json.dumps({"extensions": value}))
+        write_sublimious_file("%s.sublime-settings" % (syntax), json.dumps(value))
 
     # Take control over sublime settings file
     write_sublimious_file(settings_file, json.dumps(default_configuration))

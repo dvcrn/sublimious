@@ -14,8 +14,9 @@
     "show_full_path": True,
     "trim_trailing_white_space_on_save": True,
     "word_wrap": True,
-
     "vintageous_use_sys_clipboard": True,
+    "show_minimap": False,
 
-    "show_minimap": False
+    "rename_default": "./<filename>",
+    "mark_style": "stippled underline",
 }

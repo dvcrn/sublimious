@@ -6,7 +6,8 @@ layers = [
     'core',
     'git',
     'python',
-    'javascript'
+    'javascript',
+    'markdown'
 ]
 
 """
