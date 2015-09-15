@@ -13,7 +13,8 @@ class Layer():
     ]
 
     syntax_definitions = {
-        "Javascript": ['.js', 'js']
+        "Javascript": ['.js', 'js'],
+        "JSON": ['.jshintrc', '.eslintrc', '.jsbeautifyrc']
     }
 
     def init(self, config):

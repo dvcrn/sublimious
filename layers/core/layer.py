@@ -49,6 +49,17 @@ class Layer():
         {"keys": [" ", "w", "8"], "command": "focus_group", "args": {"group": 7}},
         {"keys": [" ", "w", "9"], "command": "focus_group", "args": {"group": 8}},
 
+        {"keys": [" ", "0"], "command": "focus_side_bar"},
+        {"keys": [" ", "1"], "command": "focus_group", "args": {"group": 0}},
+        {"keys": [" ", "2"], "command": "focus_group", "args": {"group": 1}},
+        {"keys": [" ", "3"], "command": "focus_group", "args": {"group": 2}},
+        {"keys": [" ", "4"], "command": "focus_group", "args": {"group": 3}},
+        {"keys": [" ", "5"], "command": "focus_group", "args": {"group": 4}},
+        {"keys": [" ", "6"], "command": "focus_group", "args": {"group": 5}},
+        {"keys": [" ", "7"], "command": "focus_group", "args": {"group": 6}},
+        {"keys": [" ", "8"], "command": "focus_group", "args": {"group": 7}},
+        {"keys": [" ", "9"], "command": "focus_group", "args": {"group": 8}},
+
 
         # ----- Project commands
         {"keys": [" ", "p", "t"], "command": "toggle_side_bar"},
