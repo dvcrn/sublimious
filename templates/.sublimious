@@ -4,49 +4,30 @@
 # Check sublimious/layers for all available layers
 layers = [
     'core',
-    'git'
+    'git',
+    'python'
 ]
 
-user_config = {
-    # Style
-    "theme": "Soda Dark.sublime-theme",
-    "color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
-    "font_face": "Hack",
-    "font_size": 18,
-
-    # Appearance
-    "line_numbers": False,
-    "draw_white_space": "all",
-    "word_wrap": True,
-
-    # Behavior
-    "translate_tabs_to_spaces": True,
-    "ensure_newline_at_eof_on_save": True,
-    "trim_trailing_white_space_on_save": True,
-}
-
-# Everything else that is not part of a layer. These packages are normal
-# package control packages
+"""
+Everything that is not part of a layer.
+These packages will be installed through package control
+"""
 additional_packages = [
     "AdvancedNewFile",
     "All Autocomplete",
-    "AutoPEP8",
     "Babel",
     "Base16 Color Schemes",
     "Better CoffeeScript",
     "CodeFormatter",
-    "Djaneiro",
     "DocBlockr",
     "EasyMotion",
     "Emmet",
     "Enhanced Clojure",
     "Fix Mac Path",
-    "Jedi - Python autocompletion",
     "LESS",
     "nginx",
     "PHP Getters and Setters",
     "Puppet",
-    "Python 3",
     "SaltStack-related syntax highlighting and snippets",
     "Sass",
     "SCSS",
@@ -54,13 +35,37 @@ additional_packages = [
     "SublimeLinter-contrib-jslint",
     "SublimeLinter-contrib-puppet",
     "SublimeLinter-contrib-scss-lint",
-    "SublimeLinter-flake8",
     "SublimeLinter-flow",
     "SublimeLinter-json",
     "SublimeLinter-php",
     "SublimeLinter-pyyaml",
-    "SublimeREPL",
     "tern_for_sublime",
     "TodoReview",
-    "Varnish VCL",
+    "Varnish VCL"
 ]
+
+user_config = {
+    """
+    Style!
+    Uncomment the following lines to overwrite the basic appearance and color
+    """
+    #"theme": "Soda Dark.sublime-theme",
+    #"color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
+    #"font_face": "Hack",
+    #"font_size": 18,
+
+
+    """
+    These lines are responsible for editor appearance
+    """
+    #"line_numbers": False,
+    #"draw_white_space": "selection",
+    #"word_wrap": True,
+
+    """
+    How should sublime text deal with spaces and encodings?
+    """
+    #"translate_tabs_to_spaces": True,
+    #"ensure_newline_at_eof_on_save": True,
+    #"trim_trailing_white_space_on_save": True,
+}
