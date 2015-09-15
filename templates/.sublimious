@@ -51,7 +51,6 @@ user_config = {
     #"font_face": "Hack",
     #"font_size": 18,
 
-
     """
     These lines are responsible for editor appearance
     """
