@@ -1,4 +1,6 @@
 class Layer():
+    name = "Git"
+
     required_packages = [
         "GitGutter",
         "SublimeGit",

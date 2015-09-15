@@ -1,4 +1,6 @@
 class Layer():
+    name = "Javascript"
+
     required_packages = [
         "JavaScriptNext - ES6 Syntax",
         "JsFormat",

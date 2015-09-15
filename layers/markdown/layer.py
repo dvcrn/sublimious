@@ -1,4 +1,6 @@
 class Layer():
+    name = "Markdown"
+
     required_packages = [
         "MarkdownEditing",
     ]

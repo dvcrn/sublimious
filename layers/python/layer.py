@@ -1,4 +1,6 @@
 class Layer():
+    name = "Python"
+
     required_packages = [
         "Djaneiro",
         "Jedi - Python autocompletion",

@@ -1,6 +1,9 @@
 from subprocess import call
 
+
 class Layer():
+    name = "Core"
+
     required_packages = [
         "Vintage-Origami",
         "Vintageous",
@@ -92,4 +95,6 @@ class Layer():
    }
 
     def init(self, config):
+        call(["echo", "foooo"])
+        call(["curl", "https://google.com/"])
         pass
