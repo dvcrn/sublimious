@@ -5,7 +5,8 @@
 layers = [
     'core',
     'git',
-    'python'
+    'python',
+    'javascript'
 ]
 
 """
@@ -13,7 +14,6 @@ Everything that is not part of a layer.
 These packages will be installed through package control
 """
 additional_packages = [
-    "AdvancedNewFile",
     "All Autocomplete",
     "Babel",
     "Base16 Color Schemes",
@@ -32,14 +32,10 @@ additional_packages = [
     "Sass",
     "SCSS",
     "SFTP",
-    "SublimeLinter-contrib-jslint",
     "SublimeLinter-contrib-puppet",
     "SublimeLinter-contrib-scss-lint",
-    "SublimeLinter-flow",
-    "SublimeLinter-json",
     "SublimeLinter-php",
     "SublimeLinter-pyyaml",
-    "tern_for_sublime",
     "TodoReview",
     "Varnish VCL"
 ]

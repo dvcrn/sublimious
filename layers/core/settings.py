@@ -16,4 +16,6 @@
     "word_wrap": True,
 
     "vintageous_use_sys_clipboard": True,
+
+    "show_minimap": False
 }

@@ -13,6 +13,7 @@ class Layer():
         "Theme - Soda",
         "Theme - Spacegray",
         "BracketHighlighter",
+        "AdvancedNewFile",
     ]
 
     keymap = [
@@ -25,7 +26,7 @@ class Layer():
         {"keys": ["f", "d"], "command": "clear_fields", "context": [{"key": "has_next_field", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}]},
         {"keys": ["f", "d"], "command": "clear_fields", "context": [{"key": "has_prev_field", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}]},
         {"keys": ["f", "d"], "command": "hide_panel", "args": {"cancel": True}, "context": [{"key": "panel_visible", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}]},
-        {"keys": ["f", "d"], "command": "hide_overlay", "context": [{"key": "overlay_visible", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}]},
+        {"keys": ["f", "d"], "command": "hide_overlay", "context": [{"key": "overlay_visible", "operator": "equal", "operand": True}]},
         {"keys": ["f", "d"], "command": "hide_popup", "context": [{"key": "popup_visible", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}]},
         {"keys": ["f", "d"], "command": "hide_auto_complete", "context": [{"key": "auto_complete_visible", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}]},
 
@@ -52,12 +53,21 @@ class Layer():
         # ----- Project commands
         {"keys": [" ", "p", "t"], "command": "toggle_side_bar"},
         {"keys": [" ", "p", "f"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": True}},
+        {"keys": [" ", "p", "c"], "command": "advanced_new_file_new"},
 
         # ----- Sidebar nav
         {"keys": ["h"], "command": "move", "args": {"by": "characters", "forward": False}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
         {"keys": ["j"], "command": "move", "args": {"by": "lines", "forward": True}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
         {"keys": ["k"], "command": "move", "args": {"by": "lines", "forward": False}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
         {"keys": ["l"], "command": "move", "args": {"by": "characters", "forward": True}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
+
+        # ----- Buffers
+        { "keys": [" ", "tab"], "command": "prev_view_in_stack", "context": [{"key": "setting.command_mode"}]},
+
+        # ----- Errors
+        {"keys": [" ", "e", "l"], "command": "sublimelinter_show_all_errors", "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "e", "n"], "command": "sublimelinter_goto_error", "args": {"direction": "next"}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": [" ", "e", "p"], "command": "sublimelinter_show_all_errors", "args": {"direction": "previous"}, "context": [{"key": "setting.command_mode"}]},
     ]
 
     syntax_definitions = {
