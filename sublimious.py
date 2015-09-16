@@ -6,14 +6,6 @@ import itertools
 import json
 
 
-class StatusCommand(sublime_plugin.TextCommand):
-    def run(self, edit, text):
-        self.view.set_read_only(False)
-        self.view.insert(edit, self.view.size(), "%s\n" % text)
-        self.view.set_read_only(True)
-        self.view.show(self.view.size())
-
-
 def plugin_loaded():
     sublime_dir = os.path.dirname(sublime.packages_path())
     packages_dir = os.path.join(sublime_dir, 'Packages')
@@ -82,5 +74,6 @@ def plugin_loaded():
 
     status_panel.run_command("status", {"text": "ALL DONE!"})
     status_panel.run_command("status", {"text": "(this window will self close in 5s)"})
+
 
     sublime.set_timeout(lambda: sublime.active_window().run_command("hide_panel", {"panel": "output.sublimious_status_panel", "toggle": False}), 5000)
