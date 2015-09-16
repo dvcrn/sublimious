@@ -10,8 +10,8 @@ class Layer():
         "SublimeREPL",
     ]
 
-    keymap = [
-    ]
+    sublimious_keymap = []
+    sublime_keymap = []
 
     syntax_definitions = {
         "Python3": ['.py', 'py']

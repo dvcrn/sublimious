@@ -5,8 +5,8 @@ class Layer():
         "MarkdownEditing",
     ]
 
-    keymap = [
-    ]
+    sublimious_keymap = []
+    sublime_keymap = []
 
     syntax_definitions = {
         "Markdown": ['md', 'mdown']
