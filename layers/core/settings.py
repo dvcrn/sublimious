@@ -1,6 +1,5 @@
 {
     "theme": "Soda Dark.sublime-theme",
-    "color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
     "font_face": "Hack",
     "font_size": 15,
 
