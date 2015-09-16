@@ -1,7 +1,7 @@
 # Rock your SublimeText with VIM keybindings and Sublimious!
 
 ```
-Sublimious is configuration system for SublimeText to make it act like VIM - just better.
+Sublimious is SublimeText 3 configuration system inspired by spacemacs and based around VIM.
 ```
 
 ![Shortcuts](http://i.imgur.com/2Yr2YeZ.gif)
