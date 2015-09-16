@@ -1,6 +1,12 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 import sublime_plugin
 import sublime
 import threading
+
+from .lib.collector import Collector
+from .lib import helpers
 
 keys = {
     "SPACE": "<space>",
@@ -13,25 +19,97 @@ class SpaceListener(sublime_plugin.EventListener):
     inChain = False
     shortcut_panel = None
     help_timeout = None
+    collector = None
+    cached_action_tree = None
+
+    def generate_action_tree(self):
+        if self.cached_action_tree:
+            return self.cached_action_tree
+
+        keymap = self.collector.collect_key("sublimious_keymap")
+        action_tree = {}
+        for command in keymap:
+            keys = command["keys"]
+            action = None
+            category = None
+            args = {}
+
+            if "args" in command:
+                args = command["args"]
+
+            if "command" in command:
+                action = command["command"]
+
+            if "category" in command:
+                category = command["category"]
+
+            key_amount = len(keys)
+            leaf = {}
+            for index, key in enumerate(reversed(keys)):
+                if index == 0:
+                    if action:
+                        leaf[key] = {"action": action, "args": args}
+
+                    if category:
+                        leaf[key] = {"category": category}
+                    continue
+
+                leaf = {
+                    key: leaf
+                }
+
+
+            action_tree = helpers.mergedicts(action_tree, leaf)
+
+        self.cached_action_tree = action_tree
+        return action_tree
+
+    def get_actions_for_keyset(self, keyset=None):
+        action_tree = self.generate_action_tree()
+        if keyset is None or len(keyset) == 0:
+            out = {}
+            for key, action in action_tree.items():
+                if "category" in action:
+                    out[key] = "%s" % action["category"]
+
+                if "action" in action:
+                    out[key] = "%s" % action["action"]
+
+            return out
+
+        tree = dict(action_tree)
+        last_element = len(keyset) - 1
+        for index, key in enumerate(keyset):
+            if index == last_element:
+                # check if we are on the final node
+                if "action" in tree[key]:
+                    sublime.active_window().run_command(tree[key]["action"], tree[key]["args"])
+                    self.end_command_chain()
+                    return {}
+
+
+                out = {}
+                for key, action in tree[key].items():
+                    if "category" in action:
+                        out[key] = "%s" % action["category"]
+
+                    if "action" in action:
+                        out[key] = "%s" % action["action"]
+                return out
+
+            if "category" in tree[key]:
+                tree = dict(tree[key])
+                continue
+
+            self.end_command_chain()
+
 
     def show_help(self):
-        self.shortcut_panel.run_command("show_sublimious_shortcuts", {"arr":
-            {
-            "p": "project",
-            "b": "buffer",
-            "f": "file",
-            "w": "window",
-            "a": "actions",
-            "g": "git",
-            "a": "git",
-            "c": "create",
-            "s": "select",
-            "i": "insert",
-            "m": "moo",
-            "n": "new",
-            "v": "visual",
-            }})
+        actions = self.get_actions_for_keyset(self.command_chain)
+        if len(actions) == 0:
+            return
 
+        self.shortcut_panel.run_command("show_sublimious_shortcuts", {"arr": actions })
         sublime.active_window().run_command("show_panel", {"panel": "output.sublimious_shortcut_panel", "toggle": False})
 
     def hide_help(self):
@@ -40,7 +118,7 @@ class SpaceListener(sublime_plugin.EventListener):
     def delegate_help_panel(self):
         if self.help_timeout:
             self.help_timeout.cancel()
-        self.help_timeout = threading.Timer(1.0, self.show_help)
+        self.help_timeout = threading.Timer(0, self.show_help)
         self.help_timeout.start()
 
     def start_command_chain(self):
@@ -78,4 +156,10 @@ class SpaceListener(sublime_plugin.EventListener):
                 return ("press_key", {"key": ""})
 
 def plugin_loaded():
+    collector = Collector(os.path.dirname(os.path.realpath(__file__)))
     SpaceListener.shortcut_panel = sublime.active_window().create_output_panel("sublimious_shortcut_panel")
+    SpaceListener.collector = collector
+
+
+
+

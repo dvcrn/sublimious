@@ -11,8 +11,8 @@ class Layer():
         "SublimeLinter-json",
     ]
 
-    keymap = [
-    ]
+    sublimious_keymap = []
+    sublime_keymap = []
 
     syntax_definitions = {
         "Javascript": ['.js', 'js'],
