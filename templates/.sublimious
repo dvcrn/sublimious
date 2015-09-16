@@ -1,5 +1,11 @@
 # This file is read by sublimious. Feel free to put your stuff here.
 
+"""
+Change the following line to True to activate sublimious
+By changing it to true, you are aware that this will wipe your user configuration.
+"""
+nuke_everything = False
+
 # Layer configuration. These layers will get installed upon reload
 # Check sublimious/layers for all available layers
 layers = [
@@ -15,30 +21,7 @@ Everything that is not part of a layer.
 These packages will be installed through package control
 """
 additional_packages = [
-    "All Autocomplete",
-    "Babel",
-    "Base16 Color Schemes",
-    "Better CoffeeScript",
-    "CodeFormatter",
-    "DocBlockr",
-    "EasyMotion",
-    "Emmet",
-    "Enhanced Clojure",
-    "Fix Mac Path",
-    "LESS",
-    "nginx",
-    "PHP Getters and Setters",
-    "Puppet",
-    "SaltStack-related syntax highlighting and snippets",
-    "Sass",
-    "SCSS",
-    "SFTP",
-    "SublimeLinter-contrib-puppet",
-    "SublimeLinter-contrib-scss-lint",
-    "SublimeLinter-php",
-    "SublimeLinter-pyyaml",
-    "TodoReview",
-    "Varnish VCL"
+
 ]
 
 user_config = {

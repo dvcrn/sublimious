@@ -1,6 +1,8 @@
 import itertools
 import os
+import shutil
 from .io import load_python_file
+
 
 class Collector():
     layers = []
@@ -8,11 +10,11 @@ class Collector():
     user_config = {}
 
     def __init__(self, sublimious_dir):
-        print(sublimious_dir)
-
-        config_path = "~/.sublimious"
+        config_path = os.path.expanduser("~/.sublimious")
         if not os.path.exists(config_path):
-            config_path = "%s/%s" % (sublimious_dir, "templates/.sublimious")
+            template_path = "%s/%s" % (sublimious_dir, "templates/.sublimious")
+            shutil.copyfile(template_path, config_path)
+            print("[Sublimious] no config found. Copied template.")
 
         config_file = load_python_file(config_path)
 

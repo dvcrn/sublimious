@@ -19,12 +19,20 @@ def plugin_loaded():
 
     status_panel = sublime.active_window().create_output_panel("sublimious_status_panel")
     sublime.active_window().run_command("show_panel", {"panel": "output.sublimious_status_panel", "toggle": False})
-    status_panel.run_command("status", {"text": "Welcome to Sublimious."})
 
     pcontrol_settings = os.path.join(user_dir, 'Package Control.sublime-settings')
     settings_file = os.path.join(user_dir, 'Preferences.sublime-settings')
 
     collector = Collector(current_path)
+
+    print(collector.get_user_config().nuke_everything)
+    if not collector.get_user_config().nuke_everything:
+        status_panel.run_command("status", {"text": "Sublimious is currently off."})
+        status_panel.run_command("status", {"text": "Since this might be your first start, I created a ~/.sublimious file"})
+        status_panel.run_command("status", {"text": "Open that file and change 'nuke_everything' to True to proceed\n"})
+        sys.exit()
+
+    status_panel.run_command("status", {"text": "Welcome to Sublimious."})
 
     # Second iteration to initialise all layers with config
     collected_config = collector.get_collected_config()
