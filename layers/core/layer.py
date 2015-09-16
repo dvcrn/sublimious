@@ -104,6 +104,4 @@ class Layer():
    }
 
     def init(self, config):
-        call(["echo", "foooo"])
-        call(["curl", "https://google.com/"])
         pass

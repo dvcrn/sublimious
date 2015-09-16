@@ -123,7 +123,6 @@ class SpaceListener(sublime_plugin.EventListener):
 
             # check if we are on the final node
             if "action" in tree:
-                print("executing %s" % tree["action"])
                 sublime.active_window().run_command(tree["action"], tree["args"])
                 self.end_command_chain()
                 return
