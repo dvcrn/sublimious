@@ -1,5 +1,6 @@
 {
-    "theme": "Soda Dark.sublime-theme",
+    "theme": "Soda SolarizedDark.sublime-theme",
+    "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
     "font_face": "Hack",
     "font_size": 15,
 

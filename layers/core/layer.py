@@ -17,6 +17,7 @@ class Layer():
         "Theme - Spacegray",
         "BracketHighlighter",
         "AdvancedNewFile",
+        "Theme - Soda SolarizedDark"
     ]
 
     sublimious_keymap = [
