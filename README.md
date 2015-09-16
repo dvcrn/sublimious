@@ -7,7 +7,7 @@ Sublimious is SublimeText 3 configuration system inspired by spacemacs and based
 ![Shortcuts](http://i.imgur.com/2Yr2YeZ.gif)
 
 ### Install
-for the moment, sublimious is not hosted on package control yet. To install, clone this repository into your `User` directory.
+for the moment, sublimious is not hosted on package control yet. To install, clone this repository into your `Packages` directory.
 
 __Be warned__! Sublimious is a complete configuration system and will nuke your existing configuration. Make sure to backup your configs before trying sublimious!
 
