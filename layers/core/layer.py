@@ -73,9 +73,9 @@ class Layer():
         {"keys": ["s"], "category": "selection"},
         {"keys": ["s", "e"], "command": "find_all_under", "context": [{"key": "setting.command_mode"}]},
 
-        # ----- File
-        {"keys": ["f"], "category": "file"},
-        {"keys": ["f", "m"], "command": "advanced_new_file_move", "context": [{"key": "setting.command_mode"}]},
+        # ----- Buffer
+        {"keys": ["b"], "category": "buffer"},
+        {"keys": ["b", "m"], "command": "advanced_new_file_move", "context": [{"key": "setting.command_mode"}]},
     ]
 
     sublime_keymap = [

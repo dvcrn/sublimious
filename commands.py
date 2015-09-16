@@ -11,9 +11,8 @@ class ShowSublimiousShortcutsCommand(sublime_plugin.TextCommand):
         self.view.erase(edit, sublime.Region(0, self.view.size()))
         s = []
         for key, definition in arr.items():
-            s.append("%s -> %-20s" % (key, definition))
+            s.append("%-3s -> %-20s" % (key, definition))
 
-        self.view.insert(edit, self.view.size(), 'Key Commands\n\n')
         for i, val in enumerate(s):
             if (i + 1) % 4 == 0:
                 self.view.insert(edit, self.view.size(), "%s\n" % val)

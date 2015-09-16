@@ -3,6 +3,9 @@
 ```
 Sublimious is configuration system for SublimeText to make it act like VIM - just better.
 ```
+
+![Shortcuts](http://i.imgur.com/2Yr2YeZ.gif)
+
 ### Install
 for the moment, sublimious is not hosted on package control yet. To install, clone this repository into your `User` directory.
 
