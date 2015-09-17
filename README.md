@@ -16,7 +16,7 @@ By default, sublimious will read your `~/.sublimious` configuration file. If you
 
 ### Keybindings
 
-Sublimious comes with a keybinding helper to ease you in with everything. Just hit `space` and a popup will tell you what you can perform. 
+Sublimious comes with a keybinding helper to ease you in with everything. Just hit `space` and a popup will tell you what you can perform.
 
 In general, sublimious follows the spacemacs mnemonic:
 - `<spc> p` is for project commands
@@ -34,7 +34,7 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] get a basic version with space keybindings running
 - [x] implement spacemacs-like shortcut helper
 - [x] add README files for each layer
-- [x] add a simple screenshot to README.md 
+- [x] add a simple screenshot to README.md
 - [ ] fix initial installation process (currently throwing a ton of errors)
 - [ ] add config for helper timeout to .sublimious
 - [ ] add a better default .sublimious

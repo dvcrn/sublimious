@@ -15,6 +15,10 @@ keys = {
 
 
 class SpaceListener(sublime_plugin.EventListener):
+    settings = {
+        'keyboard_overlay_timeout': 1
+    }
+
     command_chain = []
     inChain = False
     shortcut_panel = None
@@ -80,7 +84,6 @@ class SpaceListener(sublime_plugin.EventListener):
 
         return self.flatten_action_set(tree)
 
-
     def show_help(self):
         actions = self.get_actions_for_keyset(self.command_chain)
         self.shortcut_panel.run_command("show_sublimious_shortcuts", {"arr": actions })
@@ -92,7 +95,7 @@ class SpaceListener(sublime_plugin.EventListener):
     def delegate_help_panel(self):
         if self.help_timeout:
             self.help_timeout.cancel()
-        self.help_timeout = threading.Timer(1, self.show_help)
+        self.help_timeout = threading.Timer(self.settings["keyboard_overlay_timeout"], self.show_help)
         self.help_timeout.start()
 
     def start_command_chain(self):
@@ -127,7 +130,6 @@ class SpaceListener(sublime_plugin.EventListener):
                 self.end_command_chain()
                 return
 
-
     def on_window_command(self, window, command_name, args):
         if command_name == "press_key" and args["key"]:
             if args["key"] == keys["SPACE"]:
@@ -140,10 +142,12 @@ class SpaceListener(sublime_plugin.EventListener):
                 self.try_resolve_chain()
                 return ("press_key", {"key": ""})
 
+
 def plugin_loaded():
     collector = Collector(os.path.dirname(os.path.realpath(__file__)))
     SpaceListener.shortcut_panel = sublime.active_window().create_output_panel("sublimious_shortcut_panel")
     SpaceListener.collector = collector
+    SpaceListener.settings = helpers.mergedicts(SpaceListener.settings, collector.get_collected_config())
 
 
 
