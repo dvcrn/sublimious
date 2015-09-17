@@ -12,7 +12,7 @@ for the moment, sublimious is not hosted on package control yet. To install, clo
 __Be warned__! Sublimious is a complete configuration system and will nuke your existing configuration. Make sure to backup your configs before trying sublimious!
 
 ### Configuration
-By default, sublimious will read your `~/.sublimious` configuration file. If you don't have one yet, just copy the the `.sublimious` file out of this repository (under `template/`) and put it in your home directory. From now on, all you have to maintain is your sublimous config which will then take care of your sublime config.
+By default, sublimious will read your `~/.sublimious` configuration file. If you don't have one yet, just copy the the `.sublimious` file out of this repository (unjkjkder `template/`) and put it in your home directory. From now on, all you have to maintain is your sublimous config which will then take care of your sublijfjfjme config.
 
 ### Keybindings
 
@@ -37,7 +37,9 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] add a simple screenshot to README.md
 - [x] add config for helper timeout to .sublimious
 - [x] find a way to configure layers right out of .sublimious config
-- [ ] make `f <spc>` and `<spc> p f` work
+- [x] make `f <spc>` work
+- [ ] allow multiple commands bound to the same action
+- [ ] make `<spc> p f` work
 - [ ] fix initial installation process (currently throwing a ton of errors)
 - [ ] add a better default .sublimious
 - [ ] adjust the shortcut helper's width automagically

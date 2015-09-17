@@ -20,6 +20,7 @@ class SpaceListener(sublime_plugin.EventListener):
     }
 
     command_chain = []
+    last_key = None
     inChain = False
     shortcut_panel = None
     help_timeout = None
@@ -122,6 +123,9 @@ class SpaceListener(sublime_plugin.EventListener):
 
             tree = self.generate_action_tree()
             for key in self.command_chain:
+                if key not in tree:
+                    return False
+
                 tree = tree[key]
 
             # check if we are on the final node
@@ -134,17 +138,18 @@ class SpaceListener(sublime_plugin.EventListener):
 
     def on_window_command(self, window, command_name, args):
         if command_name == "press_key" and args["key"]:
-            if args["key"] == keys["SPACE"]:
+            if args["key"] == keys["SPACE"] and self.last_key not in ['f', 't']:
                 self.start_command_chain()
-                return ("press_key", {"key": ""})
+                return ("noop")
 
             if self.inChain:
                 self.add_command(args["key"])
                 if not self.try_resolve_chain():
                     self.delegate_help_panel()
 
-                return ("press_key", {"key": ""})
+                return ("noop")
 
+            self.last_key = args["key"]
             self.hide_help()
 
 
