@@ -7,6 +7,13 @@
 
     "line_numbers": False,
     "show_minimap": False,
+    "highlight_line": True,
+    "caret_style": "phase",
+    "scroll_past_end": True,
+    "find_selected_text": True,
+    "auto_find_in_selection": True,
+    "drag_text": False,
+    "inactive_panes_dim_strength": 0.1,
 
     "show_encoding": True,
     "draw_white_space": "selection",
