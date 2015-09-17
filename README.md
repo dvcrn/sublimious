@@ -35,15 +35,16 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] implement spacemacs-like shortcut helper
 - [x] add README files for each layer
 - [x] add a simple screenshot to README.md
+- [x] add config for helper timeout to .sublimious
+- [x] find a way to configure layers right out of .sublimious config
+- [ ] make `f <spc>` and `<spc> p f` work
 - [ ] fix initial installation process (currently throwing a ton of errors)
-- [ ] add config for helper timeout to .sublimious
 - [ ] add a better default .sublimious
 - [ ] adjust the shortcut helper's width automagically
 - [ ] add better README files for each layer
 - [ ] watch .sublimious file for changes and reload plugin
 - [ ] find a way to tell Package Control to reload (necessary?)
 - [ ] add a better default color scheme
-- [ ] find a way to configure layers right out of .sublimious config
 - [ ] add install instructions to README
 - [ ] submit to package control
 - [ ] add more layers
