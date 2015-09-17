@@ -145,7 +145,7 @@ class SpaceListener(sublime_plugin.EventListener):
 
                 return ("press_key", {"key": ""})
 
-        self.hide_help()
+            self.hide_help()
 
 
 def plugin_loaded():
