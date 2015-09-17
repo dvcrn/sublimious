@@ -38,8 +38,8 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] add config for helper timeout to .sublimious
 - [x] find a way to configure layers right out of .sublimious config
 - [x] make `f <spc>` work
+- [x] make `<spc> p f` work
 - [ ] allow multiple commands bound to the same action
-- [ ] make `<spc> p f` work
 - [ ] fix initial installation process (currently throwing a ton of errors)
 - [ ] add a better default .sublimious
 - [ ] adjust the shortcut helper's width automagically

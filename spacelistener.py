@@ -152,6 +152,11 @@ class SpaceListener(sublime_plugin.EventListener):
             self.last_key = args["key"]
             self.hide_help()
 
+    def on_query_context(self, view, key, *args, **kwargs):
+        # If we are in a command chain, we deny certain keybindings
+        if key == 'sublimious_chain':
+            return (not self.inChain)
+
 
 def plugin_loaded():
     collector = Collector(os.path.dirname(os.path.realpath(__file__)))
