@@ -13,10 +13,12 @@ nuke_everything = False
 # Check sublimious/layers for all available layers
 layers = [
     'core',
-    'git',
-    'python',
-    'javascript',
-    'markdown'
+
+    # 'osx',
+    # 'git',
+    # 'python',
+    # 'javascript',
+    # 'markdown'
 ]
 
 """
