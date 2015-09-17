@@ -27,6 +27,9 @@
             "user": {
                 "mark_style": "stippled underline",
             }
+        },
+        "Origami": {
+            "create_new_pane_if_necessary": False
         }
     }
 }
