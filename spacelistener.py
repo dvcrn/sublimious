@@ -118,7 +118,7 @@ class SpaceListener(sublime_plugin.EventListener):
         if self.inChain:
             if self.command_chain[-2:] == ['f', 'd'] or self.command_chain[-1] == keys["ESCAPE"]:
                 self.end_command_chain()
-                return
+                return True
 
             tree = self.generate_action_tree()
             for key in self.command_chain:
@@ -128,7 +128,9 @@ class SpaceListener(sublime_plugin.EventListener):
             if "action" in tree:
                 sublime.active_window().run_command(tree["action"], tree["args"])
                 self.end_command_chain()
-                return
+                return True
+
+        return False
 
     def on_window_command(self, window, command_name, args):
         if command_name == "press_key" and args["key"]:
@@ -138,9 +140,12 @@ class SpaceListener(sublime_plugin.EventListener):
 
             if self.inChain:
                 self.add_command(args["key"])
-                self.delegate_help_panel()
-                self.try_resolve_chain()
+                if not self.try_resolve_chain():
+                    self.delegate_help_panel()
+
                 return ("press_key", {"key": ""})
+
+        self.hide_help()
 
 
 def plugin_loaded():
