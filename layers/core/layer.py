@@ -30,6 +30,7 @@ class Layer():
         {"keys": ["w", "/"], "command": "create_pane", "args": {"direction": "right"}},
         {"keys": ["w", "s"], "command": "create_pane", "args": {"direction": "down"}},
         {"keys": ["w", "c"], "command": "destroy_pane", "args": {"direction": "self"}},
+        {"keys": ["w", "m"], "command": "set_layout", "args": {"cells": [[0, 0, 1, 1]], "cols": [0.0, 1.0], "rows": [0.0, 1.0]}},
 
         # Panel navigation
         {"keys": ["w", "0"], "command": "focus_side_bar"},
@@ -62,26 +63,26 @@ class Layer():
 
         # ----- Project commands
         {"keys": ["p"], "category": "project"},
-        {"keys": ["p", "t"], "command": "toggle_side_bar", "context": [{"key": "setting.command_mode"}]},
+        {"keys": ["p", "t"], "command": "toggle_side_bar"},
         {"keys": ["p", "f"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": True}},
-        {"keys": ["p", "c"], "command": "advanced_new_file_new", "context": [{"key": "setting.command_mode"}]},
+        {"keys": ["p", "c"], "command": "advanced_new_file_new"},
 
         # ----- Buffers
-        { "keys": ["tab"], "command": "prev_view_in_stack", "context": [{"key": "setting.command_mode"}]},
+        { "keys": ["tab"], "command": "prev_view_in_stack"},
 
         # ----- Errors
         {"keys": ["e"], "category": "errors"},
-        {"keys": ["e", "l"], "command": "sublimelinter_show_all_errors", "context": [{"key": "setting.command_mode"}]},
-        {"keys": ["e", "n"], "command": "sublimelinter_goto_error", "args": {"direction": "next"}, "context": [{"key": "setting.command_mode"}]},
-        {"keys": ["e", "p"], "command": "sublimelinter_show_all_errors", "args": {"direction": "previous"}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": ["e", "l"], "command": "sublimelinter_show_all_errors"},
+        {"keys": ["e", "n"], "command": "sublimelinter_goto_error", "args": {"direction": "next"}},
+        {"keys": ["e", "p"], "command": "sublimelinter_show_all_errors", "args": {"direction": "previous"}},
 
         # ----- Selection
         {"keys": ["s"], "category": "selection"},
-        {"keys": ["s", "e"], "command": "find_all_under", "context": [{"key": "setting.command_mode"}]},
+        {"keys": ["s", "e"], "command": "find_all_under"},
 
         # ----- Buffer
         {"keys": ["b"], "category": "buffer"},
-        {"keys": ["b", "m"], "command": "advanced_new_file_move", "context": [{"key": "setting.command_mode"}]},
+        {"keys": ["b", "m"], "command": "advanced_new_file_move"},
     ]
 
     sublime_keymap = [
