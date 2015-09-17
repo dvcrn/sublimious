@@ -14,7 +14,8 @@ class Layer():
     sublime_keymap = []
 
     syntax_definitions = {
-        "Python3": ['.py', 'py']
+        "Python": ['py'],
+        "Python3": [".sublimious"]
     }
 
     def init(self, config):

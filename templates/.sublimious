@@ -2,7 +2,10 @@
 
 """
 Change the following line to True to activate sublimious
-By changing it to true, you are aware that this will wipe your user configuration.
+By changing it to true, you are aware that this will wipe your configuration.
+Please make sure that you have a backup in place! (eg backup User/)
+
+I mean, seriously. This will delete ALL your sublime setting files
 """
 nuke_everything = False
 
@@ -24,27 +27,33 @@ additional_packages = [
 
 ]
 
+"""
+Put your own config in here or override defaults
+"""
 user_config = {
-    """
-    Style!
-    Uncomment the following lines to overwrite the basic appearance and color
-    """
-    #"theme": "Soda Dark.sublime-theme",
-    #"color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
-    #"font_face": "Hack",
-    #"font_size": 18,
+    # Style!
+    # Uncomment the following lines to overwrite the basic appearance and color
+    # "theme": "Soda Dark.sublime-theme",
+    # "color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
+    # "font_face": "Hack",
+    # "font_size": 18,
 
-    """
-    These lines are responsible for editor appearance
-    """
-    #"line_numbers": False,
-    #"draw_white_space": "selection",
-    #"word_wrap": True,
+    # These lines are responsible for editor appearance
+    # "line_numbers": False,
+    # "draw_white_space": "selection",
+    # "word_wrap": True,
 
-    """
-    How should sublime text deal with spaces and encodings?
-    """
-    #"translate_tabs_to_spaces": True,
-    #"ensure_newline_at_eof_on_save": True,
-    #"trim_trailing_white_space_on_save": True,
+    # How should sublime text deal with spaces and encodings?
+    # "translate_tabs_to_spaces": True,
+    # "ensure_newline_at_eof_on_save": True,
+    # "trim_trailing_white_space_on_save": True,
+
+    # Sublimious comes pre-configured with a lot of good settings
+    # But if you are not happy with them, overwrite them here
+    # Take the package name from the <Preferences> -> <Package Settings> menu
+    "package_settings": {
+        # "SomePackages": {
+        #     "some_config": "something else",
+        # }
+    }
 }

@@ -35,6 +35,7 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] implement spacemacs-like shortcut helper
 - [x] add README files for each layer
 - [x] add a simple screenshot to README.md 
+- [ ] fix initial installation process (currently throwing a ton of errors)
 - [ ] add config for helper timeout to .sublimious
 - [ ] add a better default .sublimious
 - [ ] adjust the shortcut helper's width automagically

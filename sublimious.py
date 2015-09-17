@@ -8,6 +8,7 @@ import json
 
 from .lib.io import load_python_file, write_sublimious_file
 from .lib.collector import Collector
+from .lib import helpers
 
 
 def plugin_loaded():
@@ -25,7 +26,6 @@ def plugin_loaded():
 
     collector = Collector(current_path)
 
-    print(collector.get_user_config().nuke_everything)
     if not collector.get_user_config().nuke_everything:
         status_panel.run_command("status", {"text": "Sublimious is currently off."})
         status_panel.run_command("status", {"text": "Since this might be your first start, I created a ~/.sublimious file"})
@@ -55,12 +55,13 @@ def plugin_loaded():
         write_sublimious_file("%s/%s.sublime-settings" % (current_path, syntax), json.dumps(value))
         status_panel.run_command("status", {"text": "Collected %s syntax definition..." % syntax})
 
+    # Generate package specific settings
+    for package, setting in collector.get_collected_config()["package_settings"].items():
+        write_sublimious_file("%s/%s.sublime-settings" % (user_dir, package), json.dumps(setting))
+
     # Take control over sublime settings file
     status_panel.run_command("status", {"text": "Taking control over Preferences.sublime-settings..."})
     write_sublimious_file(settings_file, json.dumps(collected_config))
 
     status_panel.run_command("status", {"text": "ALL DONE!"})
-    status_panel.run_command("status", {"text": "(this window will self close in 5s)"})
 
-
-    sublime.set_timeout(lambda: sublime.active_window().run_command("hide_panel", {"panel": "output.sublimious_status_panel", "toggle": False}), 5000)

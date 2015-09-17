@@ -2,6 +2,7 @@ import itertools
 import os
 import shutil
 from .io import load_python_file
+from . import helpers
 
 
 class Collector():
@@ -27,11 +28,11 @@ class Collector():
             self.layers.append(layer_init.Layer())
 
             settings = eval(open(layer_settings_file, 'r').read())
-            self.collected_config.update(settings)
+            self.collected_config = helpers.mergedicts(self.collected_config, settings)
 
         # Load user configuration on top
-        if (len(config_file.user_config) > 1):
-            self.collected_config.update(config_file["user_config"])
+        if (len(config_file.user_config) > 0):
+            self.collected_config = helpers.mergedicts(self.collected_config, config_file.user_config)
 
         self.user_config = config_file
 
@@ -56,8 +57,6 @@ class Collector():
                     syntax_definitions[syntax] = {"extensions": []}
 
                 syntax_definitions[syntax]["extensions"] = syntax_definitions[syntax]["extensions"] + files
-
-
 
             if not hasattr(layer, "color_scheme_definitions"):
                 continue
