@@ -17,7 +17,8 @@ class Layer():
         "Theme - Spacegray",
         "BracketHighlighter",
         "AdvancedNewFile",
-        "Theme - Soda SolarizedDark"
+        "Theme - Soda SolarizedDark",
+        "InactivePanes"
     ]
 
     sublimious_keymap = [
@@ -26,10 +27,10 @@ class Layer():
 
         # Powered by Origami
         {"keys": ["w"], "category": "window"},
-        {"keys": ["w", "v"], "command": "create_pane", "args": {"direction": "right"}},
-        {"keys": ["w", "/"], "command": "create_pane", "args": {"direction": "right"}},
-        {"keys": ["w", "s"], "command": "create_pane", "args": {"direction": "down"}},
-        {"keys": ["w", "c"], "command": "destroy_pane", "args": {"direction": "self"}},
+        {"keys": ["w", "v"], "command": "create_pane", "args": {"direction": "right", "give_focus": True}},
+        {"keys": ["w", "/"], "command": "create_pane", "args": {"direction": "right", "give_focus": True}},
+        {"keys": ["w", "s"], "command": "create_pane", "args": {"direction": "down", "give_focus": True}},
+        {"keys": ["w", "c"], "command": "destroy_pane", "args": {"direction": "self", "give_focus": True}},
         {"keys": ["w", "m"], "command": "set_layout", "args": {"cells": [[0, 0, 1, 1]], "cols": [0.0, 1.0], "rows": [0.0, 1.0]}},
 
         # Panel navigation
