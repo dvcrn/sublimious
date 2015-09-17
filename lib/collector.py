@@ -56,7 +56,7 @@ class Collector():
                 if syntax not in syntax_definitions:
                     syntax_definitions[syntax] = {"extensions": []}
 
-                syntax_definitions[syntax]["extensions"] = syntax_definitions[syntax]["extensions"] + files
+                syntax_definitions[syntax]["extensions"] = list(set(syntax_definitions[syntax]["extensions"] + files))
 
             if not hasattr(layer, "color_scheme_definitions"):
                 continue
