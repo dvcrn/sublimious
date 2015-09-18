@@ -1,38 +1,59 @@
 import itertools
 import os
 import shutil
+
 from .io import load_python_file
-from . import helpers
+from .helpers import mergedicts
+
+import zipfile
 
 
 class Collector():
     layers = []
     collected_config = {}
     user_config = {}
+    is_zip = False
+    zip_file = None
 
-    def __init__(self, sublimious_dir):
+    def __init__(self, sublimious_dir, user_dir=None):
+        if "sublime-package" in sublimious_dir:
+            self.is_zip = True
+            self.zip_file = zipfile.ZipFile(sublimious_dir)
+
         config_path = os.path.expanduser("~/.sublimious")
         if not os.path.exists(config_path):
-            template_path = "%s/%s" % (sublimious_dir, "templates/.sublimious")
-            shutil.copyfile(template_path, config_path)
+            if self.is_zip:
+                self.zip_file.extract("templates/.sublimious", config_path)
+            else:
+                template_path = "%s/%s" % (sublimious_dir, "templates/.sublimious")
+                shutil.copyfile(template_path, config_path)
+
             print("[Sublimious] no config found. Copied template.")
 
         config_file = load_python_file(config_path)
 
         # Collect all layers and layer configurations
         for layer in config_file.layers:
-            layer_init_file = "%s/%s/layer.py" % (sublimious_dir, "layers/%s" % layer)
-            layer_settings_file = "%s/%s/settings.py" % (sublimious_dir, "layers/%s" % layer)
 
-            layer_init = load_python_file(layer_init_file)
+            if self.is_zip:
+                layer_init = __import__("layers.%s.layer" % layer, globals(), locals(), ['Layer'])
+            else:
+                layer_init_file = "%s/%s/layer.py" % (sublimious_dir, "layers/%s" % layer)
+                layer_init = load_python_file(layer_init_file)
+
             self.layers.append(layer_init.Layer())
 
-            settings = eval(open(layer_settings_file, 'r').read())
-            self.collected_config = helpers.mergedicts(self.collected_config, settings)
+            if self.is_zip:
+                settings = eval(self.zip_file.read("layers/%s/settings.py" % layer))
+            else:
+                layer_settings_file = "%s/%s/settings.py" % (sublimious_dir, "layers/%s" % layer)
+                settings = eval(open(layer_settings_file, 'r').read())
+
+            self.collected_config = mergedicts(self.collected_config, settings)
 
         # Load user configuration on top
         if (len(config_file.user_config) > 0):
-            self.collected_config = helpers.mergedicts(self.collected_config, config_file.user_config)
+            self.collected_config = mergedicts(self.collected_config, config_file.user_config)
 
         self.user_config = config_file
 
