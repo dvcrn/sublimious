@@ -14,7 +14,7 @@ __Be warned__! Sublimious is a complete configuration system and will nuke your 
 ### Features
 - __Preconfigured__: sublimious instantly makes sublime text better by shipping with a handful of hand-tested settings
 - __VIM everywhere!__: All packages included with sublimious have been remapped to fit with vim keybindings
-- __Sasy to remember mnemonic__: Each command is mapped to a category / key combination that fits the action. `<spc> w v` for example splits the __w__indow __v__ertically. 
+- __Easy to remember mnemonic__: Each command is mapped to a category / key combination that fits the action. `<spc> w v` for example splits the [__w__]indow [__v__]ertically. 
 - __Layer based configuration__: Check `layers/` for all configuration sets shipping with sublimious. Just add it to your `~/.sublimious` config and they will be included upon restart
 - __Easy to use with dotfiles__: Just take your `~/.sublimious` config to your new pc and it will act exactly the same way as it did on your other pc
 - __Central configuration__: Instead of maintaining 10 files, you only have 1 to put your settings in
@@ -30,6 +30,7 @@ In general, sublimious follows the spacemacs mnemonic:
 - `<spc> w` for window (splits and co)
 - `<spc> s` for the current (visual) selection
 - `<spc> e` for errors (linting)
+- `<spc> t` is for toggles (sidebar, statusbar)
 
 Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar navigation for example has been remapped to `j/k`.
 
@@ -47,7 +48,7 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] add easier descriptions for commands
 - [ ] add option to bind custom actions to sublimious 
 - [ ] add option to execute / register functions from within .sublimious
-- [ ] add some kind of framework / lib to give information about current state back (e.g. tab index). Needed for comamnds like `close all other tabs`
+- [ ] add some kind of framework / lib to give information about current state back (e.g. tab index). Needed for commands like `close all other tabs`
 - [ ] allow multiple commands bound to the same action
 - [ ] fix initial installation process (currently throwing a ton of errors)
 - [ ] add a better default .sublimious
