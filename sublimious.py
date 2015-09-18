@@ -32,8 +32,8 @@ def plugin_loaded():
     status_panel.run_command("status", {"text": "Welcome to Sublimious."})
 
     # Nuke everything
-    settings_current = [ os.path.join(current_path, f) for f in os.listdir(current_path) if f.endswith(".sublime-settings") ]
-    settings_user = [ os.path.join(user_dir, f) for f in os.listdir(user_dir) if f.endswith(".sublime-settings") ]
+    settings_current = [os.path.join(current_path, f) for f in os.listdir(current_path) if f.endswith(".sublime-settings")]
+    settings_user = [os.path.join(user_dir, f) for f in os.listdir(user_dir) if f.endswith(".sublime-settings")]
     filelist = settings_current + settings_user
     for f in filelist:
         os.remove(f)

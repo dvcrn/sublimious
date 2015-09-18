@@ -7,7 +7,7 @@ class Layer():
     ]
 
     sublimious_keymap = [
-         #----- Git
+        # ----- Git
         {"keys": ["g"], "category": "git"},
         {"keys": ["g", "s"], "command": "git_status", "args": {}, "context": [{"key": "setting.command_mode"}]},
         {"keys": ["g", "p"], "command": "git_push", "args": {}, "context": [{"key": "setting.command_mode"}]},

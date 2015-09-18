@@ -5,7 +5,7 @@ import sublime_plugin
 class ShowSublimiousShortcutsCommand(sublime_plugin.TextCommand):
     def run(self, edit, arr):
         if len(arr) == 0:
-            return;
+            return
 
         self.view.set_read_only(False)
         self.view.erase(edit, sublime.Region(0, self.view.size()))
@@ -24,10 +24,10 @@ class ShowSublimiousShortcutsCommand(sublime_plugin.TextCommand):
         self.view.set_read_only(True)
         self.view.show(self.view.size())
 
+
 class StatusCommand(sublime_plugin.TextCommand):
     def run(self, edit, text):
         self.view.set_read_only(False)
         self.view.insert(edit, self.view.size(), "%s\n" % text)
         self.view.set_read_only(True)
         self.view.show(self.view.size())
-

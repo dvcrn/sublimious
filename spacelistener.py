@@ -87,7 +87,7 @@ class SpaceListener(sublime_plugin.EventListener):
 
     def show_help(self):
         actions = self.get_actions_for_keyset(self.command_chain)
-        self.shortcut_panel.run_command("show_sublimious_shortcuts", {"arr": actions })
+        self.shortcut_panel.run_command("show_sublimious_shortcuts", {"arr": actions})
         sublime.active_window().run_command("show_panel", {"panel": "output.sublimious_shortcut_panel", "toggle": False})
 
     def hide_help(self):
@@ -163,7 +163,3 @@ def plugin_loaded():
     SpaceListener.shortcut_panel = sublime.active_window().create_output_panel("sublimious_shortcut_panel")
     SpaceListener.collector = collector
     SpaceListener.settings = helpers.mergedicts(SpaceListener.settings, collector.get_collected_config())
-
-
-
-
