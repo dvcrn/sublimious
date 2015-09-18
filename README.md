@@ -44,10 +44,10 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] find a way to configure layers right out of .sublimious config
 - [x] make `f <spc>` work
 - [x] make `<spc> p f` work
+- [x] add easier descriptions for commands
 - [ ] add option to bind custom actions to sublimious 
 - [ ] add option to execute / register functions from within .sublimious
 - [ ] add some kind of framework / lib to give information about current state back (e.g. tab index). Needed for comamnds like `close all other tabs`
-- [ ] add easier descriptions for commands
 - [ ] allow multiple commands bound to the same action
 - [ ] fix initial installation process (currently throwing a ton of errors)
 - [ ] add a better default .sublimious

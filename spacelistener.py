@@ -38,7 +38,9 @@ class SpaceListener(sublime_plugin.EventListener):
             keys = command.get("keys")
             action = command.get("command", None)
             category = command.get("category", None)
+            description = command.get("description", None)
             args = command.get("args", {})
+
 
             leaf = {}
             first = True
@@ -46,7 +48,7 @@ class SpaceListener(sublime_plugin.EventListener):
                 if first:
                     first = False
                     if action:
-                        leaf[key] = {"action": action, "args": args}
+                        leaf[key] = {"action": action, "args": args, "description": description}
 
                     if category:
                         leaf[key] = {"category": category}
@@ -69,7 +71,11 @@ class SpaceListener(sublime_plugin.EventListener):
                 out[key] = "%s" % action["category"]
 
             if "action" in action:
-                out[key] = "%s" % action["action"]
+                text = action["action"]
+                if "description" in action:
+                    text = action["description"]
+
+                out[key] = "%s" % text
 
         return out
 
