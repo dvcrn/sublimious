@@ -122,9 +122,11 @@ class SpaceListener(sublime_plugin.EventListener):
 
     def try_resolve_chain(self):
         if self.inChain:
-            if self.command_chain[-2:] == ['f', 'd'] or self.command_chain[-1] == keys["ESCAPE"]:
-                self.end_command_chain()
-                return True
+            if self.command_chain[-2:] == ['f', 'd'] \
+                or self.command_chain[-1] == keys["ESCAPE"] \
+                or self.command_chain[-1] == 'q':
+                    self.end_command_chain()
+                    return True
 
             tree = self.generate_action_tree()
             for key in self.command_chain:
