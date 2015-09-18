@@ -2,13 +2,10 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 import sublime
-import sublime_plugin
-import itertools
 import json
 
-from .lib.io import load_python_file, write_sublimious_file
+from .lib.io import write_sublimious_file
 from .lib.collector import Collector
-from .lib import helpers
 
 
 def plugin_loaded():

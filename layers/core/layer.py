@@ -1,6 +1,3 @@
-from subprocess import call
-
-
 class Layer():
     name = "Core"
 
@@ -22,7 +19,7 @@ class Layer():
     ]
 
     sublimious_keymap = [
-        #----- Window commands
+        # ----- Window commands
         # All these commands here will only work in command mode
 
         # Powered by Origami
@@ -69,7 +66,7 @@ class Layer():
         {"keys": ["p", "c"], "command": "advanced_new_file_new"},
 
         # ----- Buffers
-        { "keys": ["tab"], "command": "prev_view_in_stack"},
+        {"keys": ["tab"], "command": "prev_view_in_stack"},
 
         # ----- Errors
         {"keys": ["e"], "category": "errors"},
@@ -108,8 +105,8 @@ class Layer():
     ]
 
     syntax_definitions = {
-        "Python3": ['.sublimious']
-   }
+        "Python": ['.sublimious']
+    }
 
     def init(self, config):
         pass
