@@ -31,6 +31,7 @@
     "trim_trailing_white_space_on_save": True,
 
     "vintageous_use_sys_clipboard": True,
+    "vintage_start_in_command_mode": True,
 
     "package_settings": {
         "AdvancedNewFile": {
