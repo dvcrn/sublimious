@@ -9,7 +9,7 @@ This layer adds basic git support and is powered by [SublimeGit](https://sublime
 
 ## Configuration
 
-- Check out the SublimeGit specific settings for bin config and product key config
+None yet. Check out SublimeGit specific configurations
 
 ## Usage
 
@@ -19,6 +19,9 @@ This layer adds basic git support and is powered by [SublimeGit](https://sublime
 - `<spc> g p`: Git push
 - `<spc> g c`: Git checkout
 - `<spc> g n`: Git new branch
+- `<spc> g f`: Git fetch
+- `<spc> g l`: Git log
+- `<spc> g a`: Git amend
 
 ### Navigation
 

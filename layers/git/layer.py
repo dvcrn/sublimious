@@ -9,12 +9,13 @@ class Layer():
     sublimious_keymap = [
         # ----- Git
         {"keys": ["g"], "category": "git"},
-        {"keys": ["g", "s"], "command": "git_status", "description": "status", "args": {}, "context": [{"key": "setting.command_mode"}]},
-        {"keys": ["g", "p"], "command": "git_push", "description": "push", "args": {}, "context": [{"key": "setting.command_mode"}]},
-        {"keys": ["g", "n"], "command": "git_checkout_new_branch", "description": "new branch", "args": {}, "context": [{"key": "setting.command_mode"}]},
-        {"keys": ["g", "c"], "command": "git_checkout_branch", "description": "checkout", "args": {}, "context": [{"key": "setting.command_mode"}]},
-        {"keys": ["g", "l"], "command": "git_log", "description": "log", "args": {}, "context": [{"key": "setting.command_mode"}]},
-        {"keys": ["g", "f"], "command": "git_fetch", "description": "fetch", "args": {}, "context": [{"key": "setting.command_mode"}]},
+        {"keys": ["g", "s"], "command": "git_status", "description": "status", "args": {}},
+        {"keys": ["g", "p"], "command": "git_push", "description": "push", "args": {}},
+        {"keys": ["g", "n"], "command": "git_checkout_new_branch", "description": "new branch", "args": {}},
+        {"keys": ["g", "c"], "command": "git_checkout_branch", "description": "checkout", "args": {}},
+        {"keys": ["g", "l"], "command": "git_log", "description": "log", "args": {}},
+        {"keys": ["g", "f"], "command": "git_fetch", "description": "fetch", "args": {}},
+        {"keys": ["g", "a"], "command": "git_commit_amend", "description": "amend", "args": {}},
     ]
 
     sublime_keymap = [
