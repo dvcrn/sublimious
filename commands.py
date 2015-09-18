@@ -10,8 +10,8 @@ class ShowSublimiousShortcutsCommand(sublime_plugin.TextCommand):
         self.view.set_read_only(False)
         self.view.erase(edit, sublime.Region(0, self.view.size()))
         s = []
-        for key, definition in arr.items():
-            s.append("%-3s -> %-20s" % (key, definition))
+        for key, definition in sorted(arr.items()):
+            s.append("%-5s -> %-20s" % ("[%s]" % key, definition))
 
         for i, val in enumerate(s):
             if (i + 1) % 4 == 0:

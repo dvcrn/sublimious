@@ -41,7 +41,6 @@ class SpaceListener(sublime_plugin.EventListener):
             description = command.get("description", None)
             args = command.get("args", {})
 
-
             leaf = {}
             first = True
             for key in reversed(keys):
@@ -68,7 +67,7 @@ class SpaceListener(sublime_plugin.EventListener):
         out = {}
         for key, action in actionset.items():
             if "category" in action:
-                out[key] = "%s" % action["category"]
+                out[key] = "<cat> %s" % action["category"]
 
             if "action" in action:
                 text = action["action"]
