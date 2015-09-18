@@ -67,7 +67,7 @@ class SpaceListener(sublime_plugin.EventListener):
         out = {}
         for key, action in actionset.items():
             if "category" in action:
-                out[key] = "<cat> %s" % action["category"]
+                out[key] = "+%s" % action["category"]
 
             if "action" in action:
                 text = action["action"]
