@@ -8,7 +8,13 @@
     "line_numbers": False,
     "show_minimap": False,
     "highlight_line": True,
+
+    # Make caret sexier
     "caret_style": "phase",
+    "caret_extra_top": 3,
+    "caret_extra_bottom": 3,
+    "caret_extra_width": 1,
+
     "scroll_past_end": True,
     "find_selected_text": True,
     "auto_find_in_selection": True,
