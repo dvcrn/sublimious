@@ -1,12 +1,14 @@
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(path)
+
 import sublime_plugin
 import sublime
 import threading
 
-from .lib.collector import Collector
 from .lib import helpers
+from .lib import collector
 
 keys = {
     "SPACE": "<space>",
@@ -166,7 +168,7 @@ class SpaceListener(sublime_plugin.EventListener):
 
 
 def plugin_loaded():
-    collector = Collector(os.path.dirname(os.path.realpath(__file__)))
+    coll = collector.Collector(os.path.dirname(os.path.realpath(__file__)))
     SpaceListener.shortcut_panel = sublime.active_window().create_output_panel("sublimious_shortcut_panel")
-    SpaceListener.collector = collector
-    SpaceListener.settings = helpers.mergedicts(SpaceListener.settings, collector.get_collected_config())
+    SpaceListener.collector = coll
+    SpaceListener.settings = helpers.mergedicts(SpaceListener.settings, coll.get_collected_config())

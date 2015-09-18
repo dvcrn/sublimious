@@ -2,6 +2,7 @@ class Layer():
     name = "Core"
 
     required_packages = [
+        "sublimious",
         "Vintage-Origami",
         "Vintageous",
         "Origami",

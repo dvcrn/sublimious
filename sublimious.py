@@ -1,11 +1,18 @@
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+path = os.path.dirname(os.path.realpath(__file__))
+is_zip = False
+
+if "sublime-package" in path:
+    is_zip = True
+
+sys.path.append(path)
+
 import sublime
 import json
 
-from .lib.io import write_sublimious_file
 from .lib.collector import Collector
+from .lib.io import write_sublimious_file
 
 
 def plugin_loaded():
@@ -32,9 +39,11 @@ def plugin_loaded():
     status_panel.run_command("status", {"text": "Welcome to Sublimious."})
 
     # Nuke everything
-    settings_current = [os.path.join(current_path, f) for f in os.listdir(current_path) if f.endswith(".sublime-settings")]
     settings_user = [os.path.join(user_dir, f) for f in os.listdir(user_dir) if f.endswith(".sublime-settings")]
-    filelist = settings_current + settings_user
+    filelist = settings_user
+    if not is_zip:
+        settings_current = [os.path.join(current_path, f) for f in os.listdir(current_path) if f.endswith(".sublime-settings")]
+        filelist = settings_current + settings_user
     for f in filelist:
         os.remove(f)
 
@@ -51,12 +60,12 @@ def plugin_loaded():
 
     # Get all keybinding definitions and save to keymapfile
     status_panel.run_command("status", {"text": "Building keymap..."})
-    write_sublimious_file("%s/Default.sublime-keymap" % current_path, json.dumps(collector.collect_key("sublime_keymap")))
+    write_sublimious_file("%s/Default.sublime-keymap" % user_dir, json.dumps(collector.collect_key("sublime_keymap")))
 
     # Generate a bunch of syntax files depending on layer config
     syntax_definitions = collector.collect_syntax_specific_settings()
     for syntax, value in syntax_definitions.items():
-        write_sublimious_file("%s/%s.sublime-settings" % (current_path, syntax), json.dumps(value))
+        write_sublimious_file("%s/%s.sublime-settings" % (user_dir, syntax), json.dumps(value))
         status_panel.run_command("status", {"text": "Collected %s syntax definition..." % syntax})
 
     # Generate package specific settings
