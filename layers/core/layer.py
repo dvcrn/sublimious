@@ -81,6 +81,11 @@ class Layer():
         # ----- Buffer
         {"keys": ["b"], "category": "buffer"},
         {"keys": ["b", "m"], "command": "advanced_new_file_move"},
+
+        # ----- Toggles
+        {"keys": ["t"], "category": "toggles"},
+        {"keys": ["t", "s"], "command": "toggle_status_bar"},
+        {"keys": ["t", "t"], "command": "toggle_side_bar"},
     ]
 
     sublime_keymap = [
