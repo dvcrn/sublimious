@@ -20,6 +20,7 @@ def plugin_loaded():
 
     sublime_dir = os.path.dirname(sublime.packages_path())
     packages_dir = os.path.join(sublime_dir, 'Packages')
+    sublimious_packages_dir = os.path.join(packages_dir, 'sublimious/')
     user_dir = os.path.join(packages_dir, 'User')
 
     status_panel = sublime.active_window().create_output_panel("sublimious_status_panel")
@@ -39,11 +40,13 @@ def plugin_loaded():
     status_panel.run_command("status", {"text": "Welcome to Sublimious."})
 
     # Nuke everything
+    if not os.path.isdir(sublimious_packages_dir):
+        os.mkdir(sublimious_packages_dir)
+
     settings_user = [os.path.join(user_dir, f) for f in os.listdir(user_dir) if f.endswith(".sublime-settings")]
-    filelist = settings_user
-    if not is_zip:
-        settings_current = [os.path.join(current_path, f) for f in os.listdir(current_path) if f.endswith(".sublime-settings")]
-        filelist = settings_current + settings_user
+    settings_current = [os.path.join(sublimious_packages_dir, f) for f in os.listdir(sublimious_packages_dir) if f.endswith(".sublime-settings")]
+    filelist = settings_current + settings_user
+
     for f in filelist:
         os.remove(f)
 
@@ -65,7 +68,7 @@ def plugin_loaded():
     # Generate a bunch of syntax files depending on layer config
     syntax_definitions = collector.collect_syntax_specific_settings()
     for syntax, value in syntax_definitions.items():
-        write_sublimious_file("%s/%s.sublime-settings" % (user_dir, syntax), json.dumps(value))
+        write_sublimious_file("%s/%s.sublime-settings" % (sublimious_packages_dir, syntax), json.dumps(value))
         status_panel.run_command("status", {"text": "Collected %s syntax definition..." % syntax})
 
     # Generate package specific settings
@@ -77,4 +80,3 @@ def plugin_loaded():
     write_sublimious_file(settings_file, json.dumps(collected_config))
 
     status_panel.run_command("status", {"text": "ALL DONE!"})
-
