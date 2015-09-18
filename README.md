@@ -1,5 +1,7 @@
 # Rock your SublimeText with VIM keybindings and Sublimious!
 
+[![Join the chat at https://gitter.im/dvcrn/sublimious](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dvcrn/sublimious?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ```
 Sublimious is SublimeText 3 configuration system inspired by spacemacs and based around VIM.
 ```
