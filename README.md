@@ -4,7 +4,7 @@
 Sublimious is SublimeText 3 configuration system inspired by spacemacs and based around VIM.
 ```
 
-![Shortcuts](http://i.imgur.com/Y6xgSyW.png)
+![Shortcuts](http://i.imgur.com/GK6CnLH.png)
 
 ### Install
 for the moment, sublimious is not hosted on package control yet. To install, clone this repository into your `Packages` directory.
