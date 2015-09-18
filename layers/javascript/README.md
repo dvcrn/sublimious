@@ -1,4 +1,4 @@
-# Git Layer
+# Javascript Layer
 
 Layer for adding javascript support and a bunch of linting. 
 
@@ -12,7 +12,7 @@ Layer for adding javascript support and a bunch of linting.
 
 ## Configuration
 
-None yet
+The javascript layer comes with es6 and es5 mode. To use es6, set `use_es6` inside `.sublimious` to `True`.
 
 ## Usage
 
