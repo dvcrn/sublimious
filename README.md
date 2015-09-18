@@ -11,8 +11,13 @@ for the moment, sublimious is not hosted on package control yet. To install, clo
 
 __Be warned__! Sublimious is a complete configuration system and will nuke your existing configuration. Make sure to backup your configs before trying sublimious!
 
-### Configuration
-By default, sublimious will read your `~/.sublimious` configuration file. If you don't have one yet, just copy the the `.sublimious` file out of this repository (unjkjkder `template/`) and put it in your home directory. From now on, all you have to maintain is your sublimous config which will then take care of your sublijfjfjme config.
+### Features
+- __Preconfigured__: sublimious instantly makes sublime text better by shipping with a handful of hand-tested settings
+- __VIM everywhere!__: All packages included with sublimious have been remapped to fit with vim keybindings
+- __Sasy to remember mnemonic__: Each command is mapped to a category / key combination that fits the action. `<spc> w v` for example splits the __w__indow __v__ertically. 
+- __Layer based configuration__: Check `layers/` for all configuration sets shipping with sublimious. Just add it to your `~/.sublimious` config and they will be included upon restart
+- __Easy to use with dotfiles__: Just take your `~/.sublimious` config to your new pc and it will act exactly the same way as it did on your other pc
+- __Central configuration__: Instead of maintaining 10 files, you only have 1 to put your settings in
 
 ### Keybindings
 
