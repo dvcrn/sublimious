@@ -9,6 +9,8 @@ Sublimious is SublimeText 3 configuration system inspired by spacemacs and based
 ### Install
 Install `sublimious` through [package control](https://packagecontrol.io/packages/sublimious).
 
+Currently sublimious is using the [Hack font face](https://github.com/chrissimpkins/Hack). If you don't have it installed, change `font_face` inside your `.sublimious` or download it here - https://github.com/chrissimpkins/Hack/releases. I can highly recommend you to install it though! 
+
 Alternatively, clone this repository into your `Packages/` directory if you prefer this method (good if you want to contribute :)!)
 
 __Be warned__! Sublimious is a complete configuration system and will nuke your existing configuration. Make sure to backup your configs before trying sublimious!
