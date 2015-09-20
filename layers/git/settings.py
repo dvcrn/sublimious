@@ -1,8 +1,8 @@
 {
     "package_settings": {
-        "SublimeGit": {
-            "git_commit_pedantic": True,
-            "git_commit_verbose": True
+        "GitSavvy": {
+            "show_commit_diff": True,
+            "show_git_flow_commands": True
         }
     }
 }
