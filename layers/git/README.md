@@ -1,15 +1,24 @@
 # Git Layer
 
-This layer adds basic git support and is powered by [SublimeGit](https://sublimegit.net/) (for the moment).
+This layer adds basic git support and is powered by [GitSavvy](https://github.com/divmain/GitSavvy/).
 
 ## Requirements
 
-- a valid [SublimeGit](https://sublimegit.net/) license (they offer a free trial)
 - Git on your system
 
 ## Configuration
 
-None yet. Check out SublimeGit specific configurations
+None yet. Check out [GitSavvy](https://github.com/divmain/GitSavvy/blob/master/GitSavvy.sublime-settings) for things you can change. 
+
+To use github integration, add the following under your `package_settings` inside `.sublimious`:
+
+```
+"GitSavvy": {
+    "api_tokens": {
+        "github.com": "API TOKEN HERE"
+    }
+}
+```
 
 ## Usage
 
@@ -22,6 +31,7 @@ None yet. Check out SublimeGit specific configurations
 - `<spc> g f`: Git fetch
 - `<spc> g l`: Git log
 - `<spc> g a`: Git amend
+- `<spc> g b`: Git blame
 
 ### Navigation
 
