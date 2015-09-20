@@ -24,6 +24,7 @@ class Layer():
         {"keys": ["k"], "command": "move", "args": {"by": "lines", "forward": False}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
         {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
         {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.diff_view", "operator": "equal", "operand": True}]},
+        {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.inline_diff_view", "operator": "equal", "operand": True}]},
     ]
 
     syntax_definitions = {}
