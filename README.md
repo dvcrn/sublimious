@@ -7,7 +7,9 @@ Sublimious is SublimeText 3 configuration system inspired by spacemacs and based
 ![Shortcuts](http://i.imgur.com/GK6CnLH.png)
 
 ### Install
-for the moment, sublimious is not hosted on package control yet. To install, clone this repository into your `Packages` directory.
+Install `sublimious` through [package control](https://packagecontrol.io/packages/sublimious).
+
+Alternatively, clone this repository into your `Packages/` directory if you prefer this method (good if you want to contribute :)!)
 
 __Be warned__! Sublimious is a complete configuration system and will nuke your existing configuration. Make sure to backup your configs before trying sublimious!
 
@@ -46,6 +48,7 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] make `f <spc>` work
 - [x] make `<spc> p f` work
 - [x] add easier descriptions for commands
+- [x] submit to package control
 - [ ] add option to bind custom actions to sublimious 
 - [ ] add option to execute / register functions from within .sublimious
 - [ ] add some kind of framework / lib to give information about current state back (e.g. tab index). Needed for commands like `close all other tabs`
@@ -58,6 +61,5 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [ ] find a way to tell Package Control to reload (necessary?)
 - [ ] add a better default color scheme
 - [ ] add install instructions to README
-- [ ] submit to package control
 - [ ] add more layers
 - [ ] add more shortcuts
