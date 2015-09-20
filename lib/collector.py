@@ -23,7 +23,10 @@ class Collector():
         config_path = os.path.expanduser("~/.sublimious")
         if not os.path.exists(config_path):
             if self.is_zip:
-                self.zip_file.extract("templates/.sublimious", config_path)
+                templ = self.zip_file.open("templates/.sublimious")
+                target = open(config_path, "wb")
+                shutil.copyfileobj(templ, target)
+                target.close()
             else:
                 template_path = "%s/%s" % (sublimious_dir, "templates/.sublimious")
                 shutil.copyfile(template_path, config_path)
