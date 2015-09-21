@@ -20,8 +20,8 @@ class Layer():
     ]
 
     sublime_keymap = [
-        {"keys": ["j"], "command": "move", "args": {"by": "lines", "forward": True}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
-        {"keys": ["k"], "command": "move", "args": {"by": "lines", "forward": False}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
+        {"keys": ["j"], "command": "gs_status_navigate_file", "args": {"forward": True}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
+        {"keys": ["k"], "command": "gs_status_navigate_file", "args": {"forward": False}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
         {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
         {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.diff_view", "operator": "equal", "operand": True}]},
         {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.inline_diff_view", "operator": "equal", "operand": True}]},
