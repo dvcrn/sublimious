@@ -88,6 +88,7 @@ class Layer():
         {"keys": ["t", "s"], "command": "toggle_status_bar", "description": "toggle statusbar"},
         {"keys": ["t", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["t", "l"], "command": "toggle_setting", "args": {"setting": "line_numbers"}, "description": "toggle line numbers"},
+        {"keys": ["t", "m"], "command": "toggle_minimap", "args": {}, "description": "toggle minimap"},
     ]
 
     sublime_keymap = [
