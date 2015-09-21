@@ -25,6 +25,10 @@ __Be warned__! Sublimious is a complete configuration system and will nuke your 
 
 ### Keybindings
 
+![keybindings](http://i.imgur.com/1IXGhlS.gifv)
+
+![git](http://i.imgur.com/udkcPfB.gifv)
+
 Sublimious comes with a keybinding helper to ease you in with everything. Just hit `space` and a popup will tell you what you can perform.
 
 In general, sublimious follows the spacemacs mnemonic:
