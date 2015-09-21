@@ -1,6 +1,6 @@
 # Git Layer
 
-![git](http://i.imgur.com/udkcPfB.gifv)
+![git](http://i.imgur.com/udkcPfB.gif) 
 
 This layer adds basic git support and is powered by [GitSavvy](https://github.com/divmain/GitSavvy/).
 
