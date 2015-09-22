@@ -81,6 +81,7 @@ class Layer():
         {"keys": ["b"], "category": "buffer"},
         {"keys": ["b", "m"], "command": "advanced_new_file_move", "description": "move/rename file"},
         {"keys": ["b", "b"], "command": "tab_filter", "description": "navigate buffers"},
+        {"keys": ["b", "c"], "command": "close", "description": "close buffer"},
 
         # ----- Toggles
         {"keys": ["t"], "category": "toggles"},
