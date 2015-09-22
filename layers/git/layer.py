@@ -3,27 +3,28 @@ class Layer():
 
     required_packages = [
         "GitGutter",
-        "SublimeGit",
+        "GitSavvy",
     ]
 
     sublimious_keymap = [
         # ----- Git
         {"keys": ["g"], "category": "git"},
-        {"keys": ["g", "s"], "command": "git_status", "description": "status", "args": {}},
-        {"keys": ["g", "p"], "command": "git_push", "description": "push", "args": {}},
-        {"keys": ["g", "n"], "command": "git_checkout_new_branch", "description": "new branch", "args": {}},
-        {"keys": ["g", "c"], "command": "git_checkout_branch", "description": "checkout", "args": {}},
-        {"keys": ["g", "l"], "command": "git_log", "description": "log", "args": {}},
-        {"keys": ["g", "f"], "command": "git_fetch", "description": "fetch", "args": {}},
-        {"keys": ["g", "a"], "command": "git_commit_amend", "description": "amend", "args": {}},
+        {"keys": ["g", "s"], "command": "gs_show_status", "description": "status", "args": {}},
+        {"keys": ["g", "p"], "command": "gs_push", "description": "push", "args": {}},
+        {"keys": ["g", "n"], "command": "gs_checkout_new_branch", "description": "new branch", "args": {}},
+        {"keys": ["g", "c"], "command": "gs_checkout_branch", "description": "checkout", "args": {}},
+        {"keys": ["g", "l"], "command": "gs_log", "description": "log", "args": {}},
+        {"keys": ["g", "f"], "command": "gs_fetch", "description": "fetch", "args": {}},
+        {"keys": ["g", "a"], "command": "gs_commit", "description": "amend", "args": {"amend": True}},
+        {"keys": ["g", "d"], "command": "gs_diff", "description": "diff", "args": {}},
     ]
 
     sublime_keymap = [
-        {"keys": ["j"], "command": "git_status_move", "args": {"goto": "item:next"}, "context": [{"key": "selector", "operator": "equal", "operand": "text.git-status"}]},
-        {"keys": ["k"], "command": "git_status_move", "args": {"goto": "item:prev"}, "context": [{"key": "selector", "operator": "equal", "operand": "text.git-status"}]},
-        {"keys": ["q"], "command": "close", "context": [{"key": "selector", "operator": "equal", "operand": "text.git-status"}]},
-        {"keys": ["q"], "command": "close", "context": [{"key": "selector", "operator": "equal", "operand": "source.git-diff"}]},
-        {"keys": ["q"], "command": "close", "context": [{"key": "selector", "operator": "equal", "operand": "source.git-status"}]},
+        {"keys": ["j"], "command": "gs_status_navigate_file", "args": {"forward": True}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
+        {"keys": ["k"], "command": "gs_status_navigate_file", "args": {"forward": False}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
+        {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.status_view", "operator": "equal", "operand": True}]},
+        {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.diff_view", "operator": "equal", "operand": True}]},
+        {"keys": ["q"], "command": "close", "args": {}, "context": [{"key": "setting.git_savvy.inline_diff_view", "operator": "equal", "operand": True}]},
     ]
 
     syntax_definitions = {}

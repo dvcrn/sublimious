@@ -2,6 +2,16 @@ import sublime
 import sublime_plugin
 
 
+class ReloadSublimiousCommand(sublime_plugin.WindowCommand):
+    def run(self, *args, **kw):
+        print("Reloading sublimious....")
+
+        from . import sublimious
+        from . import spacelistener
+        sublimious.plugin_loaded()
+        spacelistener.plugin_loaded()
+
+
 class ShowSublimiousShortcutsCommand(sublime_plugin.TextCommand):
     def run(self, edit, arr):
         if len(arr) == 0:

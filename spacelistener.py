@@ -18,7 +18,8 @@ keys = {
 
 class SpaceListener(sublime_plugin.EventListener):
     settings = {
-        'keyboard_overlay_timeout': 1
+        'shortcut_overlay_timeout': 1,
+        'show_shortcut_overlay': True
     }
 
     command_chain = []
@@ -101,9 +102,12 @@ class SpaceListener(sublime_plugin.EventListener):
         sublime.active_window().run_command("hide_panel", {"panel": "output.sublimious_shortcut_panel", "toggle": False})
 
     def delegate_help_panel(self):
+        if not self.settings["show_shortcut_overlay"]:
+            return
+
         if self.help_timeout:
             self.help_timeout.cancel()
-        self.help_timeout = threading.Timer(self.settings["keyboard_overlay_timeout"], self.show_help)
+        self.help_timeout = threading.Timer(self.settings["shortcut_overlay_timeout"], self.show_help)
         self.help_timeout.start()
 
     def start_command_chain(self):

@@ -16,6 +16,12 @@ class Collector():
     zip_file = None
 
     def __init__(self, sublimious_dir, user_dir=None):
+        self.layers = []
+        self.collected_config = {}
+        self.user_config = {}
+        self.is_zip = False
+        self.zip_file = None
+
         if "sublime-package" in sublimious_dir:
             self.is_zip = True
             self.zip_file = zipfile.ZipFile(sublimious_dir)

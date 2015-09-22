@@ -9,7 +9,11 @@ Sublimious is SublimeText 3 configuration system inspired by spacemacs and based
 ![Shortcuts](http://i.imgur.com/GK6CnLH.png)
 
 ### Install
-for the moment, sublimious is not hosted on package control yet. To install, clone this repository into your `Packages` directory.
+Install `sublimious` through [package control](https://packagecontrol.io/packages/sublimious).
+
+Currently sublimious is using the [Hack font face](https://github.com/chrissimpkins/Hack). If you don't have it installed, change `font_face` inside your `.sublimious` or download it here - https://github.com/chrissimpkins/Hack/releases. I can highly recommend you to install it though! 
+
+Alternatively, clone this repository into your `Packages/` directory if you prefer this method (good if you want to contribute :)!)
 
 __Be warned__! Sublimious is a complete configuration system and will nuke your existing configuration. Make sure to backup your configs before trying sublimious!
 
@@ -23,6 +27,10 @@ __Be warned__! Sublimious is a complete configuration system and will nuke your 
 
 ### Keybindings
 
+![git](http://i.imgur.com/udkcPfB.gif)
+
+![keybindings](http://i.imgur.com/1IXGhlS.gif)
+
 Sublimious comes with a keybinding helper to ease you in with everything. Just hit `space` and a popup will tell you what you can perform.
 
 In general, sublimious follows the spacemacs mnemonic:
@@ -33,8 +41,13 @@ In general, sublimious follows the spacemacs mnemonic:
 - `<spc> s` for the current (visual) selection
 - `<spc> e` for errors (linting)
 - `<spc> t` is for toggles (sidebar, statusbar)
+- `<spc> _` is for meta commands (sublimious reload)
 
 Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar navigation for example has been remapped to `j/k`.
+
+### Tips and Tricks
+
+- after changing your .sublimious file, hit `<spc> _ r` to re-feed your .sublimious config into sublimetext. All changes will be reloaded immediately. This includes packages, settings and layers.
 
 
 ### To-Dos:
@@ -48,18 +61,16 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] make `f <spc>` work
 - [x] make `<spc> p f` work
 - [x] add easier descriptions for commands
-- [ ] add option to bind custom actions to sublimious 
-- [ ] add option to execute / register functions from within .sublimious
-- [ ] add some kind of framework / lib to give information about current state back (e.g. tab index). Needed for commands like `close all other tabs`
-- [ ] allow multiple commands bound to the same action
+- [x] submit to package control
+- [x] add install instructions to README
+- [x] add a better default .sublimious
+- [x] find a way to tell Package Control to reload (https://github.com/wbond/package_control/issues/997#issuecomment-141457037). This is needed to trigger pc after sublimious modified the pc settings file.
+- [x] add option to reload .sublimious (trigger all layer collections, writings, and package control reload)
+- [ ] add option to bind custom bindings to sublimious (e.g. user wants to bind action_123 to combination yyy). Should support both, sublimes system and sublimious system
+- [ ] add option to execute / register functions from within .sublimious (e.g. user adds `def xxx` and wants to bind that function to combination yyy)
+- [ ] allow multiple commands bound to the same key combination
 - [ ] fix initial installation process (currently throwing a ton of errors)
-- [ ] add a better default .sublimious
 - [ ] adjust the shortcut helper's width automagically
-- [ ] add better README files for each layer
-- [ ] watch .sublimious file for changes and reload plugin
-- [ ] find a way to tell Package Control to reload (necessary?)
-- [ ] add a better default color scheme
-- [ ] add install instructions to README
-- [ ] submit to package control
-- [ ] add more layers
-- [ ] add more shortcuts
+- [ ] add better README files for each layer 
+- [ ] ship Hack as default font and use it (possible?). If not, find a good preinstalled font and use that as default
+- [ ] find a way to bind content specific actions to a keybinding. (e.g. `<space> m` will always list actions based on the current syntax. In javascript this could list `format javascript code` and in python `autoflake8`)
