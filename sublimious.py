@@ -13,6 +13,7 @@ import json
 
 from .lib.collector import Collector
 from .lib.io import write_sublimious_file
+from .lib.packagecontroller import PackageController
 
 
 def plugin_loaded():
@@ -78,5 +79,9 @@ def plugin_loaded():
     # Take control over sublime settings file
     status_panel.run_command("status", {"text": "Taking control over Preferences.sublime-settings..."})
     write_sublimious_file(settings_file, json.dumps(collected_config))
+
+    status_panel.run_command("status", {"text": "Pinging package control"})
+    controller = PackageController()
+    controller.reload()
 
     status_panel.run_command("status", {"text": "ALL DONE!"})

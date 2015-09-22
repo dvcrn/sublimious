@@ -89,6 +89,10 @@ class Layer():
         {"keys": ["t", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["t", "l"], "command": "toggle_setting", "args": {"setting": "line_numbers"}, "description": "toggle line numbers"},
         {"keys": ["t", "m"], "command": "toggle_minimap", "args": {}, "description": "toggle minimap"},
+
+        # ----- Meta
+        {"keys": ["_"], "category": "meta"},
+        {"keys": ["_", "r"], "command": "reload_sublimious", "description": "reload .sublimious"},
     ]
 
     sublime_keymap = [
