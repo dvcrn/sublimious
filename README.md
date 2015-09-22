@@ -43,6 +43,10 @@ In general, sublimious follows the spacemacs mnemonic:
 
 Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar navigation for example has been remapped to `j/k`.
 
+### Tips and Tricks
+
+- after changing your .sublimious file, hit `<spc> _ r` to re-feed your .sublimious config into sublimetext. All changes will be reloaded immediately. This includes packages, settings and layers.
+
 
 ### To-Dos:
 
