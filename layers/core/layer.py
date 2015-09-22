@@ -3,20 +3,17 @@ class Layer():
 
     required_packages = [
         "sublimious",
+        "Package Control",
         "Vintage-Origami",
         "Vintageous",
+        "Vintageous​Plugin​Surround",
         "Origami",
-        "Package Control",
         "SublimeLinter",
         "Surround",
-        "Theme - Brogrammer",
-        "Theme - Nil",
-        "Theme - Soda",
-        "Theme - Spacegray",
         "BracketHighlighter",
         "AdvancedNewFile",
+        "InactivePanes",
         "Theme - Soda SolarizedDark",
-        "InactivePanes"
     ]
 
     sublimious_keymap = [
@@ -89,6 +86,7 @@ class Layer():
         {"keys": ["t", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["t", "l"], "command": "toggle_setting", "args": {"setting": "line_numbers"}, "description": "toggle line numbers"},
         {"keys": ["t", "m"], "command": "toggle_minimap", "args": {}, "description": "toggle minimap"},
+        {"keys": ["t", "t"], "command": "toggle_tabs", "args": {}, "description": "toggle tabs"},
 
         # ----- Meta
         {"keys": ["_"], "category": "meta"},
