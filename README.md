@@ -25,9 +25,9 @@ __Be warned__! Sublimious is a complete configuration system and will nuke your 
 
 ### Keybindings
 
-![keybindings](http://i.imgur.com/1IXGhlS.gif)
-
 ![git](http://i.imgur.com/udkcPfB.gif)
+
+![keybindings](http://i.imgur.com/1IXGhlS.gif)
 
 Sublimious comes with a keybinding helper to ease you in with everything. Just hit `space` and a popup will tell you what you can perform.
 
@@ -39,6 +39,7 @@ In general, sublimious follows the spacemacs mnemonic:
 - `<spc> s` for the current (visual) selection
 - `<spc> e` for errors (linting)
 - `<spc> t` is for toggles (sidebar, statusbar)
+- `<spc> _` is for meta commands (sublimious reload)
 
 Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar navigation for example has been remapped to `j/k`.
 
@@ -57,13 +58,13 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] submit to package control
 - [x] add install instructions to README
 - [x] add a better default .sublimious
+- [x] find a way to tell Package Control to reload (https://github.com/wbond/package_control/issues/997#issuecomment-141457037). This is needed to trigger pc after sublimious modified the pc settings file.
+- [x] add option to reload .sublimious (trigger all layer collections, writings, and package control reload)
 - [ ] add option to bind custom bindings to sublimious (e.g. user wants to bind action_123 to combination yyy). Should support both, sublimes system and sublimious system
 - [ ] add option to execute / register functions from within .sublimious (e.g. user adds `def xxx` and wants to bind that function to combination yyy)
 - [ ] allow multiple commands bound to the same key combination
 - [ ] fix initial installation process (currently throwing a ton of errors)
 - [ ] adjust the shortcut helper's width automagically
 - [ ] add better README files for each layer 
-- [ ] watch .sublimious file for changes and reload plugin (trigger all layer collections, writings, and package control reload)
-- [ ] find a way to tell Package Control to reload (https://github.com/wbond/package_control/issues/997#issuecomment-141457037). This is needed to trigger pc after sublimious modified the pc settings file.
 - [ ] ship Hack as default font and use it (possible?). If not, find a good preinstalled font and use that as default
 - [ ] find a way to bind content specific actions to a keybinding. (e.g. `<space> m` will always list actions based on the current syntax. In javascript this could list `format javascript code` and in python `autoflake8`)

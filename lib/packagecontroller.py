@@ -20,8 +20,8 @@ class PackageController:
     def reload(self):
         # We have to delete `Package Control.last-run` to not run into the cache
         last_run_file = os.path.join(self.user_dir, "Package Control.last-run")
-        os.remove(last_run_file)
+        if os.path.isfile(last_run_file):
+            os.remove(last_run_file)
 
         from package_control.package_cleanup import PackageCleanup
-        cleanup = PackageCleanup()
-        cleanup.start()
+        sublime.set_timeout(lambda: PackageCleanup().start(), 2000)
