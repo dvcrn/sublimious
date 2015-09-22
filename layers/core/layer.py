@@ -14,7 +14,7 @@ class Layer():
         "AdvancedNewFile",
         "InactivePanes",
         "Theme - Soda SolarizedDark",
-        "Extended​Tab​Switcher",
+        "ExtendedTabSwitcher"
     ]
 
     sublimious_keymap = [
@@ -65,7 +65,7 @@ class Layer():
         {"keys": ["p", "c"], "command": "advanced_new_file_new", "description": "create file"},
 
         # ----- Buffers
-        {"keys": ["<tab>"], "command": "next_view", "description": "previous buffer"},
+        {"keys": ["<tab>"], "command": "last_used_tab", "description": "previous buffer"},
 
         # ----- Errors
         {"keys": ["e"], "category": "errors"},
