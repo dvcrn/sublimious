@@ -7,7 +7,9 @@ class ReloadSublimiousCommand(sublime_plugin.WindowCommand):
         print("Reloading sublimious....")
 
         from . import sublimious
+        from . import spacelistener
         sublimious.plugin_loaded()
+        spacelistener.plugin_loaded()
 
 
 class ShowSublimiousShortcutsCommand(sublime_plugin.TextCommand):
