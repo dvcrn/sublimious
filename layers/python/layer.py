@@ -3,7 +3,7 @@ class Layer():
 
     required_packages = [
         "Djaneiro",
-        "Jedi - Python autocompletion",
+        "Anaconda",
         "Python 3",
         "SublimeLinter-flake8",
         "AutoPEP8",
