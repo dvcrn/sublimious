@@ -35,7 +35,8 @@ Put your own config in here or override defaults
 user_config = {
     # Sublimious general
     # How long should sublimious wait before showing you the overlay?
-    # "keyboard_overlay_timeout": 1
+    # "shortcut_overlay_timeout": 1
+    # "show_shortcut_overlay": True
 
     # Style!
     # Uncomment the following lines to overwrite the basic appearance and color
