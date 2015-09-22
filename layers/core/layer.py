@@ -26,6 +26,7 @@ class Layer():
         {"keys": ["w", "v"], "command": "create_pane", "description": "split vertically", "args": {"direction": "right", "give_focus": True}},
         {"keys": ["w", "/"], "command": "create_pane", "description": "split vertically", "args": {"direction": "right", "give_focus": True}},
         {"keys": ["w", "s"], "command": "create_pane", "description": "split horizontally", "args": {"direction": "down", "give_focus": True}},
+        {"keys": ["w", "-"], "command": "create_pane", "description": "split horizontally", "args": {"direction": "down", "give_focus": True}},
         {"keys": ["w", "c"], "command": "destroy_pane", "description": "close window", "args": {"direction": "self"}},
         {"keys": ["w", "m"], "command": "set_layout", "description": "maximise window", "args": {"cells": [[0, 0, 1, 1]], "cols": [0.0, 1.0], "rows": [0.0, 1.0]}},
 
