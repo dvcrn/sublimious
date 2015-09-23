@@ -6,7 +6,7 @@ class Layer():
         "Package Control",
         "Vintage-Origami",
         "Vintageous",
-        "Vintageous​Plugin​Surround",
+        "VintageousPluginSurround",
         "Origami",
         "SublimeLinter",
         "Surround",
@@ -14,6 +14,7 @@ class Layer():
         "AdvancedNewFile",
         "InactivePanes",
         "Theme - Soda SolarizedDark",
+        "ExtendedTabSwitcher"
     ]
 
     sublimious_keymap = [
@@ -64,7 +65,7 @@ class Layer():
         {"keys": ["p", "c"], "command": "advanced_new_file_new", "description": "create file"},
 
         # ----- Buffers
-        {"keys": ["tab"], "command": "prev_view_in_stack", "description": "previous view"},
+        {"keys": ["<tab>"], "command": "next_view_in_stack", "description": "previous buffer"},
 
         # ----- Errors
         {"keys": ["e"], "category": "errors"},
@@ -79,6 +80,8 @@ class Layer():
         # ----- Buffer
         {"keys": ["b"], "category": "buffer"},
         {"keys": ["b", "m"], "command": "advanced_new_file_move", "description": "move/rename file"},
+        {"keys": ["b", "b"], "command": "extended_switcher", "args": {"list_mode": "window"}, "description": "navigate buffers"},
+        {"keys": ["b", "c"], "command": "close", "description": "close buffer"},
 
         # ----- Toggles
         {"keys": ["t"], "category": "toggles"},
