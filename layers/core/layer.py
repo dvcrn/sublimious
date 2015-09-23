@@ -14,7 +14,8 @@ class Layer():
         "AdvancedNewFile",
         "InactivePanes",
         "Theme - Soda SolarizedDark",
-        "ExtendedTabSwitcher"
+        "ExtendedTabSwitcher",
+        "TabsShortcuts"
     ]
 
     sublimious_keymap = [
@@ -83,6 +84,8 @@ class Layer():
         {"keys": ["b", "m"], "command": "advanced_new_file_move", "description": "move/rename file"},
         {"keys": ["b", "b"], "command": "extended_switcher", "args": {"list_mode": "window"}, "description": "navigate buffers"},
         {"keys": ["b", "c"], "command": "close", "description": "close buffer"},
+        {"keys": ["b", "C"], "command": "close_others", "description": "close other buffers"},
+        {"keys": ["b", "K"], "command": "close_others", "description": "kill other buffers"},
 
         # ----- Toggles
         {"keys": ["t"], "category": "toggles"},
