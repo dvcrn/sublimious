@@ -5,6 +5,7 @@ class Layer():
         "sublimious",
         "Package Control",
         "Vintage-Origami",
+        "DocBlockr",
         "Vintageous",
         "VintageousPluginSurround",
         "Origami",
