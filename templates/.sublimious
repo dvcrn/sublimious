@@ -18,7 +18,8 @@ layers = [
     # 'git',
     # 'python',
     # 'javascript',
-    # 'markdown'
+    # 'markdown',
+    # 'coffee'
 ]
 
 """
