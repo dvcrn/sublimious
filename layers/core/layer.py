@@ -65,7 +65,7 @@ class Layer():
         {"keys": ["p", "c"], "command": "advanced_new_file_new", "description": "create file"},
 
         # ----- Buffers
-        {"keys": ["<tab>"], "command": "last_used_tab", "description": "previous buffer"},
+        {"keys": ["<tab>"], "command": "next_view_in_stack", "description": "previous buffer"},
 
         # ----- Errors
         {"keys": ["e"], "category": "errors"},
