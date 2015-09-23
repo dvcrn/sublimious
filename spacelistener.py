@@ -86,15 +86,22 @@ class SpaceListener(sublime_plugin.EventListener):
         if keyset is None or len(keyset) == 0:
             return self.flatten_action_set(action_tree)
 
-        tree = action_tree
-        for key in keyset:
-            if "category" in tree[key]:
-                tree = tree[key]
+        try:
+            tree = action_tree
+            for key in keyset:
+                if "category" in tree[key]:
+                    tree = tree[key]
+        except KeyError:
+            return None
 
         return self.flatten_action_set(tree)
 
     def show_help(self):
         actions = self.get_actions_for_keyset(self.command_chain)
+        if actions is None:
+            self.end_command_chain()
+            return
+
         self.shortcut_panel.run_command("show_sublimious_shortcuts", {"arr": actions})
         sublime.active_window().run_command("show_panel", {"panel": "output.sublimious_shortcut_panel", "toggle": False})
 
