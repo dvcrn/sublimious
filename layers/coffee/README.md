@@ -4,7 +4,8 @@ Layer for adding coffeescript support
 
 ## Requirements
 
-- `coffee` needs to be installed on your system
+- `coffee` (`npm install -g coffee`)
+- `coffeelint` (`npm install -g coffeelint`)
 
 ## Configuration
 

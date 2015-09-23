@@ -4,7 +4,8 @@ class Layer():
     required_packages = [
         "SublimeREPL",
         "Better CoffeeScript",
-        "CoffeeCompile"
+        "CoffeeCompile",
+        "SublimeLinter-coffeelint"
     ]
 
     sublimious_keymap = []
