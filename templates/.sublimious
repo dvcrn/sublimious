@@ -20,7 +20,8 @@ layers = [
     # 'javascript',
     # 'markdown',
     # 'coffee',
-    # 'php'
+    # 'php',
+    # 'elixir'
 ]
 
 """
