@@ -66,7 +66,7 @@ class Layer():
         {"keys": ["p", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["p", "f"], "command": "show_overlay", "description": "find file", "args": {"overlay": "goto", "show_files": True}},
         {"keys": ["p", "c"], "command": "advanced_new_file_new", "description": "create file"},
-        {"keys": ["p", "R"], "command": "reveal_in_sidebar", "description": "create file"},
+        {"keys": ["p", "R"], "command": "reveal_in_side_bar", "description": "reveal file"},
         {"keys": ["p", "s"], "command": "show_panel", "args": {"panel": "find_in_files"}, "description": "create file"},
         {"keys": ["/"], "command": "show_panel", "args": {"panel": "find_in_files"}, "description": "create file"},
 
