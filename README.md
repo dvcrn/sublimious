@@ -72,3 +72,8 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [ ] add better README files for each layer 
 - [ ] ship Hack as default font and use it (possible?). If not, find a good preinstalled font and use that as default
 - [ ] find a way to bind content specific actions to a keybinding. (e.g. `<space> m` will always list actions based on the current syntax. In javascript this could list `format javascript code` and in python `autoflake8`)
+
+
+### License
+
+GPLv3
