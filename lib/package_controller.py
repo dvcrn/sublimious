@@ -1,6 +1,8 @@
 import sys
 import os
 
+from .package_resolver import PackageResolver
+
 import sublime
 
 
@@ -20,22 +22,22 @@ class PackageController:
         from package_control.package_manager import PackageManager
         self.package_control = PackageManager()
 
-    def install_package(self, package_name):
-        self.package_control.install_package(package_name)
-
     def install_packages(self, packages, wipe_others=True):
         if wipe_others:
             installed_packages = self.package_control.list_packages()
 
+            to_remove = []
             for pkg in installed_packages:
                 if pkg not in packages:
-                    self.package_control.remove_package(pkg)
+                    to_remove.append(pkg)
 
+        to_install = []
         for pkg in packages:
             if pkg in installed_packages:
                 continue
+            to_install.append(pkg)
 
-            self.install_package(pkg)
+        PackageResolver(self.package_control, to_install, to_remove).start()
 
     def reload(self):
         # We have to delete `Package Control.last-run` to not run into the cache
