@@ -13,7 +13,7 @@ import json
 
 from .lib.collector import Collector
 from .lib.io import write_sublimious_file
-from .lib.packagecontroller import PackageController
+from .lib.package_controller import PackageController
 
 
 def plugin_loaded():
@@ -23,6 +23,8 @@ def plugin_loaded():
     packages_dir = os.path.join(sublime_dir, 'Packages')
     sublimious_packages_dir = os.path.join(packages_dir, 'sublimious/')
     user_dir = os.path.join(packages_dir, 'User')
+
+    package_controller = PackageController()
 
     status_panel = sublime.active_window().create_output_panel("sublimious_status_panel")
     sublime.active_window().run_command("show_panel", {"panel": "output.sublimious_status_panel", "toggle": False})
@@ -48,7 +50,11 @@ def plugin_loaded():
     settings_current = [os.path.join(sublimious_packages_dir, f) for f in os.listdir(sublimious_packages_dir) if f.endswith(".sublime-settings")]
     filelist = settings_current + settings_user
 
+    # Delete all settings except Package Control
     for f in filelist:
+        if "Package Control" in f:
+            continue
+
         os.remove(f)
 
     # Second iteration to initialise all layers with config
@@ -60,7 +66,7 @@ def plugin_loaded():
     # Collect all packages
     status_panel.run_command("status", {"text": "Collecting all packages..."})
     all_packages = collector.collect_key("required_packages") + collector.get_user_config().additional_packages
-    write_sublimious_file(pcontrol_settings, json.dumps({'installed_packages': all_packages}))
+    package_controller.install_packages(all_packages)
 
     # Get all keybinding definitions and save to keymapfile
     status_panel.run_command("status", {"text": "Building keymap..."})
@@ -79,9 +85,5 @@ def plugin_loaded():
     # Take control over sublime settings file
     status_panel.run_command("status", {"text": "Taking control over Preferences.sublime-settings..."})
     write_sublimious_file(settings_file, json.dumps(collected_config))
-
-    status_panel.run_command("status", {"text": "Pinging package control"})
-    controller = PackageController()
-    controller.reload()
 
     status_panel.run_command("status", {"text": "ALL DONE!"})
