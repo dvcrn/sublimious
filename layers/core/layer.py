@@ -3,20 +3,20 @@ class Layer():
 
     required_packages = [
         "sublimious",
-        "Vintage-Origami",
-        "Vintageous",
-        "Origami",
         "Package Control",
+        "Vintage-Origami",
+        "DocBlockr",
+        "Vintageous",
+        "VintageousPluginSurround",
+        "Origami",
         "SublimeLinter",
         "Surround",
-        "Theme - Brogrammer",
-        "Theme - Nil",
-        "Theme - Soda",
-        "Theme - Spacegray",
         "BracketHighlighter",
         "AdvancedNewFile",
+        "InactivePanes",
         "Theme - Soda SolarizedDark",
-        "InactivePanes"
+        "ExtendedTabSwitcher",
+        "TabsShortcuts"
     ]
 
     sublimious_keymap = [
@@ -28,7 +28,8 @@ class Layer():
         {"keys": ["w", "v"], "command": "create_pane", "description": "split vertically", "args": {"direction": "right", "give_focus": True}},
         {"keys": ["w", "/"], "command": "create_pane", "description": "split vertically", "args": {"direction": "right", "give_focus": True}},
         {"keys": ["w", "s"], "command": "create_pane", "description": "split horizontally", "args": {"direction": "down", "give_focus": True}},
-        {"keys": ["w", "c"], "command": "destroy_pane", "description": "close window", "args": {"direction": "self", "give_focus": True}},
+        {"keys": ["w", "-"], "command": "create_pane", "description": "split horizontally", "args": {"direction": "down", "give_focus": True}},
+        {"keys": ["w", "c"], "command": "destroy_pane", "description": "close window", "args": {"direction": "self"}},
         {"keys": ["w", "m"], "command": "set_layout", "description": "maximise window", "args": {"cells": [[0, 0, 1, 1]], "cols": [0.0, 1.0], "rows": [0.0, 1.0]}},
 
         # Panel navigation
@@ -65,9 +66,12 @@ class Layer():
         {"keys": ["p", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["p", "f"], "command": "show_overlay", "description": "find file", "args": {"overlay": "goto", "show_files": True}},
         {"keys": ["p", "c"], "command": "advanced_new_file_new", "description": "create file"},
+        {"keys": ["p", "R"], "command": "reveal_in_side_bar", "description": "reveal file"},
+        {"keys": ["p", "s"], "command": "show_panel", "args": {"panel": "find_in_files"}, "description": "create file"},
+        {"keys": ["/"], "command": "show_panel", "args": {"panel": "find_in_files"}, "description": "create file"},
 
         # ----- Buffers
-        {"keys": ["tab"], "command": "prev_view_in_stack", "description": "previous view"},
+        {"keys": ["<tab>"], "command": "next_view_in_stack", "description": "previous buffer"},
 
         # ----- Errors
         {"keys": ["e"], "category": "errors"},
@@ -82,6 +86,10 @@ class Layer():
         # ----- Buffer
         {"keys": ["b"], "category": "buffer"},
         {"keys": ["b", "m"], "command": "advanced_new_file_move", "description": "move/rename file"},
+        {"keys": ["b", "b"], "command": "extended_switcher", "args": {"list_mode": "window"}, "description": "navigate buffers"},
+        {"keys": ["b", "c"], "command": "close", "description": "close buffer"},
+        {"keys": ["b", "C"], "command": "close_others", "description": "close other buffers"},
+        {"keys": ["b", "K"], "command": "close_others", "description": "kill other buffers"},
 
         # ----- Toggles
         {"keys": ["t"], "category": "toggles"},
@@ -89,6 +97,7 @@ class Layer():
         {"keys": ["t", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["t", "l"], "command": "toggle_setting", "args": {"setting": "line_numbers"}, "description": "toggle line numbers"},
         {"keys": ["t", "m"], "command": "toggle_minimap", "args": {}, "description": "toggle minimap"},
+        {"keys": ["t", "T"], "command": "toggle_tabs", "args": {}, "description": "toggle tabs"},
 
         # ----- Meta
         {"keys": ["_"], "category": "meta"},

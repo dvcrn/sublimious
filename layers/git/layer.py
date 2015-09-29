@@ -10,7 +10,8 @@ class Layer():
         # ----- Git
         {"keys": ["g"], "category": "git"},
         {"keys": ["g", "s"], "command": "gs_show_status", "description": "status", "args": {}},
-        {"keys": ["g", "p"], "command": "gs_push", "description": "push", "args": {}},
+        {"keys": ["g", "P"], "command": "gs_push", "description": "push", "args": {}},
+        {"keys": ["g", "p"], "command": "gs_pull", "description": "pull", "args": {}},
         {"keys": ["g", "n"], "command": "gs_checkout_new_branch", "description": "new branch", "args": {}},
         {"keys": ["g", "c"], "command": "gs_checkout_branch", "description": "checkout", "args": {}},
         {"keys": ["g", "l"], "command": "gs_log", "description": "log", "args": {}},

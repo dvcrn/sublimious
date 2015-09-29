@@ -36,6 +36,7 @@
     "package_settings": {
         "AdvancedNewFile": {
             "rename_default": "./",
+            "default_initial": "./"
         },
         "SublimeLinter": {
             "user": {

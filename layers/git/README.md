@@ -27,7 +27,8 @@ To use github integration, add the following under your `package_settings` insid
 ### General
 
 - `<spc> g s`: Git status
-- `<spc> g p`: Git push
+- `<spc> g P`: Git push
+- `<spc> g p`: Git pull
 - `<spc> g c`: Git checkout
 - `<spc> g n`: Git new branch
 - `<spc> g f`: Git fetch

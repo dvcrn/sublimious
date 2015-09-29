@@ -1,21 +1,18 @@
 class Layer():
-    name = "Python"
+    name = "CoffeeScript"
 
     required_packages = [
-        "Djaneiro",
-        "Anaconda",
-        "Python 3",
-        "SublimeLinter-flake8",
-        "AutoPEP8",
         "SublimeREPL",
+        "Better CoffeeScript",
+        "CoffeeCompile",
+        "SublimeLinter-coffeelint"
     ]
 
     sublimious_keymap = []
     sublime_keymap = []
 
     syntax_definitions = {
-        "Python": ['py'],
-        "Python3": [".sublimious"]
+        "CoffeeScript": ['coffee']
     }
 
     def init(self, config):
