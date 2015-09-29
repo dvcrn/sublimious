@@ -13,7 +13,7 @@ import json
 
 from .lib.collector import Collector
 from .lib.io import write_sublimious_file
-from .lib.packagecontroller import PackageController
+from .lib.package_controller import PackageController
 
 
 def plugin_loaded():
@@ -50,7 +50,11 @@ def plugin_loaded():
     settings_current = [os.path.join(sublimious_packages_dir, f) for f in os.listdir(sublimious_packages_dir) if f.endswith(".sublime-settings")]
     filelist = settings_current + settings_user
 
+    # Delete all settings except Package Control
     for f in filelist:
+        if "Package Control" in f:
+            continue
+
         os.remove(f)
 
     # Second iteration to initialise all layers with config
