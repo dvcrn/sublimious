@@ -124,6 +124,10 @@ class Layer():
         {"keys": ["j"], "command": "move", "args": {"by": "lines", "forward": True}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
         {"keys": ["k"], "command": "move", "args": {"by": "lines", "forward": False}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
         {"keys": ["l"], "command": "move", "args": {"by": "characters", "forward": True}, "context": [{"key": "control", "operand": "sidebar_tree"}]},
+
+        # ----- Overlay nav
+        {"keys": ["ctrl+j"], "command": "move", "args": {"by": "lines", "forward": True}, "context": [{"key": "overlay_visible", "operator": "equal", "operand": True}]},
+        {"keys": ["ctrl+k"], "command": "move", "args": {"by": "lines", "forward": False}, "context": [{"key": "overlay_visible", "operator": "equal", "operand": True}]},
     ]
 
     syntax_definitions = {
