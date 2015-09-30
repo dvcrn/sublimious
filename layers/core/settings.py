@@ -1,6 +1,6 @@
 {
-    "theme": "Soda SolarizedDark.sublime-theme",
-    "color_scheme": "Packages/sublimious/Solarized Dark (sublimious).tmTheme",
+    "theme": "Material-Theme.sublime-theme",
+    "color_scheme": "Packages/Facebook Material Theme/schemes/Material-Theme.tmTheme",
 
     "font_face": "Hack",
     "font_size": 15,
