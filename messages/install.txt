@@ -1,0 +1,17 @@
+
+
+           _     _ _           _
+ ___ _   _| |__ | (_)_ __ ___ (_) ___  _   _ ___
+/ __| | | | '_ \| | | '_ ` _ \| |/ _ \| | | / __|
+\__ \ |_| | |_) | | | | | | | | | (_) | |_| \__ \
+|___/\__,_|_.__/|_|_|_| |_| |_|_|\___/ \__,_|___/
+                            - sublimetext reloaded
+
+Thanks for installing!
+Make sure to read the readme at https://github.com/dvcrn/sublimious/blob/master/README.md
+
+sublimious might need a bit on first startup, so just be a bit patient :)
+If you see errors, close them and restart sublimetext. Make sure to report at https://github.com/dvcrn/sublimious/issues
+
+Cheers!
+David
