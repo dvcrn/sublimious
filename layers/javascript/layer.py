@@ -23,4 +23,5 @@ class Layer():
         if "use_es6" in config:
             if config["use_es6"] == True:
                 self.syntax_definitions["JavaScript (Babel)"] = ["js", "jsx"]
-                del self.syntax_definitions["Javascript"]
+                if "Javascript" in self.syntax_definitions:
+                    del self.syntax_definitions["Javascript"]
