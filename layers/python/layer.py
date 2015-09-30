@@ -5,7 +5,6 @@ class Layer():
         "Djaneiro",
         "Anaconda",
         "Python 3",
-        "SublimeLinter-flake8",
         "AutoPEP8",
         "SublimeREPL",
     ]
