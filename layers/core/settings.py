@@ -1,6 +1,6 @@
 {
     "theme": "Material-Theme.sublime-theme",
-    "color_scheme": "Packages/Facebook Material Theme/schemes/Material-Theme.tmTheme",
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 
     "font_face": "Hack",
     "font_size": 15,
