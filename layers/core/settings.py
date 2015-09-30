@@ -3,7 +3,7 @@
     "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 
     "font_face": "Hack",
-    "font_size": 15,
+    "font_size": 14,
 
     "line_numbers": False,
     "show_minimap": False,
