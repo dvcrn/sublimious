@@ -29,7 +29,6 @@ def plugin_loaded():
     status_panel = sublime.active_window().create_output_panel("sublimious_status_panel")
     sublime.active_window().run_command("show_panel", {"panel": "output.sublimious_status_panel", "toggle": False})
 
-    pcontrol_settings = os.path.join(user_dir, 'Package Control.sublime-settings')
     settings_file = os.path.join(user_dir, 'Preferences.sublime-settings')
 
     collector = Collector(current_path)
@@ -40,7 +39,7 @@ def plugin_loaded():
         status_panel.run_command("status", {"text": "Open that file and change 'nuke_everything' to True to proceed\n"})
         sys.exit()
 
-    status_panel.run_command("status", {"text": "Welcome to Sublimious."})
+    status_panel.run_command("status", {"text": "Welcome to Sublimious. Just a moment, I'm initializing some things..."})
 
     # Nuke everything
     if not os.path.isdir(sublimious_packages_dir):
@@ -61,29 +60,22 @@ def plugin_loaded():
     collected_config = collector.get_collected_config()
     for layer in collector.get_layers():
         layer.init(collected_config)
-        status_panel.run_command("status", {"text": "'%s' layer loaded..." % layer.name})
 
     # Collect all packages
-    status_panel.run_command("status", {"text": "Collecting all packages..."})
     all_packages = collector.collect_key("required_packages") + collector.get_user_config().additional_packages
     package_controller.install_packages(all_packages)
 
     # Get all keybinding definitions and save to keymapfile
-    status_panel.run_command("status", {"text": "Building keymap..."})
     write_sublimious_file("%s/Default.sublime-keymap" % user_dir, json.dumps(collector.collect_key("sublime_keymap")))
 
     # Generate a bunch of syntax files depending on layer config
     syntax_definitions = collector.collect_syntax_specific_settings()
     for syntax, value in syntax_definitions.items():
         write_sublimious_file("%s/%s.sublime-settings" % (sublimious_packages_dir, syntax), json.dumps(value))
-        status_panel.run_command("status", {"text": "Collected %s syntax definition..." % syntax})
 
     # Generate package specific settings
     for package, setting in collector.get_collected_config()["package_settings"].items():
         write_sublimious_file("%s/%s.sublime-settings" % (user_dir, package), json.dumps(setting))
 
     # Take control over sublime settings file
-    status_panel.run_command("status", {"text": "Taking control over Preferences.sublime-settings..."})
     write_sublimious_file(settings_file, json.dumps(collected_config))
-
-    status_panel.run_command("status", {"text": "ALL DONE!"})
