@@ -18,7 +18,7 @@ keys = {
 
 class SpaceListener(sublime_plugin.EventListener):
     settings = {
-        'shortcut_overlay_timeout': 1,
+        'shortcut_overlay_timeout': 0.2,
         'show_shortcut_overlay': True
     }
 
