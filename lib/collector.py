@@ -37,7 +37,7 @@ class Collector():
                 template_path = "%s/%s" % (sublimious_dir, "templates/.sublimious")
                 shutil.copyfile(template_path, config_path)
 
-            print("[Sublimious] no config found. Copied template.")
+            print("[sublimious] no config found. Copied template.")
 
         config_file = load_python_file(config_path)
 

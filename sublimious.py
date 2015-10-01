@@ -77,6 +77,7 @@ class Sublimious():
         write_sublimious_file(settings_file, json.dumps(self.collector.get_collected_config()))
 
         self.status_panel.run_command("status", {"text": "All done! Enjoy sublimious."})
+        print("[sublimious] finishing setup.")
 
 
 def plugin_loaded():
