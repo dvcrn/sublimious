@@ -67,6 +67,7 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] add a better default .sublimious
 - [x] find a way to tell Package Control to reload (https://github.com/wbond/package_control/issues/997#issuecomment-141457037). This is needed to trigger pc after sublimious modified the pc settings file.
 - [x] add option to reload .sublimious (trigger all layer collections, writings, and package control reload)
+- [x] add option to define custom commands / functions inside layers
 - [ ] add option to bind custom bindings to sublimious (e.g. user wants to bind action_123 to combination yyy). Should support both, sublimes system and sublimious system
 - [ ] add option to execute / register functions from within .sublimious (e.g. user adds `def xxx` and wants to bind that function to combination yyy)
 - [ ] allow multiple commands bound to the same key combination
