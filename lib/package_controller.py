@@ -22,7 +22,7 @@ class PackageController:
         from package_control.package_manager import PackageManager
         self.package_control = PackageManager()
 
-    def install_packages(self, packages, wipe_others=True):
+    def install_packages(self, packages, callback=lambda: True, wipe_others=True):
         if wipe_others:
             installed_packages = self.package_control.list_packages()
 
@@ -37,7 +37,7 @@ class PackageController:
                 continue
             to_install.append(pkg)
 
-        PackageResolver(self.package_control, to_install, to_remove).start()
+        PackageResolver(self.package_control, to_install, to_remove, callback).start()
 
     def reload(self):
         # We have to delete `Package Control.last-run` to not run into the cache
