@@ -45,11 +45,15 @@ class Collector():
         # Collect all layers and layer configurations
         for layer in config_file.layers:
 
-            if self.is_zip:
-                layer_init = __import__("layers.%s.layer" % layer, globals(), locals(), ['Layer'])
-            else:
-                layer_init_file = "%s/%s/layer.py" % (sublimious_dir, "layers/%s" % layer)
-                layer_init = load_python_file(layer_init_file)
+            try:
+                if self.is_zip:
+                    layer_init = __import__("layers.%s.layer" % layer, globals(), locals(), ['Layer'])
+                else:
+                    layer_init_file = "%s/%s/layer.py" % (sublimious_dir, "layers/%s" % layer)
+                    layer_init = load_python_file(layer_init_file)
+            except ImportError:
+                print("[sublimious] tried to load layer '%s' but couldn't import it. Does it exist?" % layer)
+                continue
 
             self.layers.append(layer_init.Layer())
             self.commands.append("layers.%s.commands" % layer)
