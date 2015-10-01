@@ -1,9 +1,9 @@
 {
-    "theme": "Soda SolarizedDark.sublime-theme",
-    "color_scheme": "Packages/sublimious/Solarized Dark (sublimious).tmTheme",
+    "theme": "Material-Theme.sublime-theme",
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 
     "font_face": "Hack",
-    "font_size": 15,
+    "font_size": 14,
 
     "line_numbers": False,
     "show_minimap": False,

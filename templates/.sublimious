@@ -43,8 +43,8 @@ user_config = {
 
     # Style!
     # Uncomment the following lines to overwrite the basic appearance and color
-    # "theme": "Soda Dark.sublime-theme",
-    # "color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
+    # "theme": "Material-Theme.sublime-theme",
+    # "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
     # "font_face": "Hack",
     # "font_size": 18,
 
