@@ -4,7 +4,7 @@
 Sublimious is SublimeText 3 configuration system inspired by spacemacs and based around VIM.
 ```
 
-![Shortcuts](http://i.imgur.com/GK6CnLH.png)
+![Shortcuts](http://i.imgur.com/uvDjXNf.png)
 
 ### Install
 Install `sublimious` through [package control](https://packagecontrol.io/packages/sublimious).
@@ -16,6 +16,11 @@ Alternatively, clone this repository into your `Packages/` directory if you pref
 __Be warned__! Sublimious is a complete configuration system and will nuke your existing configuration. Make sure to backup your configs before trying sublimious!
 
 ### Features
+
+Control everything with easy to remember shortcuts!
+
+![showcase](http://i.imgur.com/MqsB6Pt.gif)
+
 - __Preconfigured__: sublimious instantly makes sublime text better by shipping with a handful of hand-tested settings
 - __VIM everywhere!__: All packages included with sublimious have been remapped to fit with vim keybindings
 - __Easy to remember mnemonic__: Each command is mapped to a category / key combination that fits the action. `<spc> w v` for example splits the [__w__]indow [__v__]ertically. 
@@ -25,11 +30,9 @@ __Be warned__! Sublimious is a complete configuration system and will nuke your 
 
 ### Keybindings
 
-![git](http://i.imgur.com/udkcPfB.gif)
-
-![keybindings](http://i.imgur.com/1IXGhlS.gif)
-
 Sublimious comes with a keybinding helper to ease you in with everything. Just hit `space` and a popup will tell you what you can perform.
+
+![keybindings](http://i.imgur.com/NBbFOCm.gif)
 
 In general, sublimious follows the spacemacs mnemonic:
 - `<spc> p` is for project commands
