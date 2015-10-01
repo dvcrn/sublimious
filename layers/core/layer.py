@@ -104,6 +104,7 @@ class Layer():
         # ----- Meta
         {"keys": ["_"], "category": "meta"},
         {"keys": ["_", "r"], "command": "reload_sublimious", "description": "reload .sublimious"},
+        {"keys": ["_", "e"], "command": "open_sublimious_config", "description": "edit .sublimious"},
     ]
 
     sublime_keymap = [
