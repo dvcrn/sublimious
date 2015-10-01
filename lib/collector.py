@@ -17,6 +17,7 @@ class Collector():
 
     def __init__(self, sublimious_dir, user_dir=None):
         self.layers = []
+        self.commands = []
         self.collected_config = {}
         self.user_config = {}
         self.is_zip = False
@@ -44,13 +45,18 @@ class Collector():
         # Collect all layers and layer configurations
         for layer in config_file.layers:
 
-            if self.is_zip:
-                layer_init = __import__("layers.%s.layer" % layer, globals(), locals(), ['Layer'])
-            else:
-                layer_init_file = "%s/%s/layer.py" % (sublimious_dir, "layers/%s" % layer)
-                layer_init = load_python_file(layer_init_file)
+            try:
+                if self.is_zip:
+                    layer_init = __import__("layers.%s.layer" % layer, globals(), locals(), ['Layer'])
+                else:
+                    layer_init_file = "%s/%s/layer.py" % (sublimious_dir, "layers/%s" % layer)
+                    layer_init = load_python_file(layer_init_file)
+            except ImportError:
+                print("[sublimious] tried to load layer '%s' but couldn't import it. Does it exist?" % layer)
+                continue
 
             self.layers.append(layer_init.Layer())
+            self.commands.append("layers.%s.commands" % layer)
 
             if self.is_zip:
                 settings = eval(self.zip_file.read("layers/%s/settings.py" % layer))
@@ -68,6 +74,9 @@ class Collector():
 
     def get_layers(self):
         return self.layers
+
+    def get_commands(self):
+        return self.commands
 
     def get_collected_config(self):
         return self.collected_config
