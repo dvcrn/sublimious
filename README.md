@@ -69,10 +69,9 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - [x] add option to reload .sublimious (trigger all layer collections, writings, and package control reload)
 - [x] add option to define custom commands / functions inside layers
 - [x] fix initial installation process (currently throwing a ton of errors)
-- [ ] add option to bind custom bindings to sublimious (e.g. user wants to bind action_123 to combination yyy). Should support both, sublimes system and sublimious system
+- [ ] add option to add custom bindings to sublimious (e.g. user wants to bind action_123 to combination yyy). Should support both, sublimes system and sublimious system
 - [ ] add option to execute / register functions from within .sublimious (e.g. user adds `def xxx` and wants to bind that function to combination yyy)
 - [ ] allow multiple commands bound to the same key combination
 - [ ] adjust the shortcut helper's width automagically
-- [ ] add better README files for each layer
 - [ ] ship Hack as default font and use it (possible?). If not, find a good preinstalled font and use that as default
 - [ ] find a way to bind content specific actions to a keybinding. (e.g. `<space> m` will always list actions based on the current syntax. In javascript this could list `format javascript code` and in python `autoflake8`)
