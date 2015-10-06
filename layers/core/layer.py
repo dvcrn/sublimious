@@ -84,6 +84,8 @@ class Layer():
         # ----- Selection
         {"keys": ["s"], "category": "selection"},
         {"keys": ["s", "e"], "command": "find_all_under", "description": "expand selection"},
+        {"keys": ["s", "l"], "command": "split_selection_into_lines", "description": "add cursor to lines"},
+
 
         # ----- Buffer
         {"keys": ["b"], "category": "buffer"},
