@@ -95,6 +95,12 @@ class Layer():
         {"keys": ["b", "C"], "command": "close_others", "description": "close other buffers"},
         {"keys": ["b", "K"], "command": "close_others", "description": "kill other buffers"},
 
+        {"keys": ["b", "p"], "category": "push to"},
+        {"keys": ["b", "p", "l"], "command": "carry_file_to_pane", "args": {"direction": "right"}, "description": "right"},
+        {"keys": ["b", "p", "h"], "command": "carry_file_to_pane", "args": {"direction": "left"}, "description": "left"},
+        {"keys": ["b", "p", "j"], "command": "carry_file_to_pane", "args": {"direction": "down"}, "description": "down"},
+        {"keys": ["b", "p", "k"], "command": "carry_file_to_pane", "args": {"direction": "up"}, "description": "up"},
+
         # ----- Toggles
         {"keys": ["t"], "category": "toggles"},
         {"keys": ["t", "s"], "command": "toggle_status_bar", "description": "toggle statusbar"},
