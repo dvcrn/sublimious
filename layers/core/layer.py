@@ -17,7 +17,7 @@ class Layer():
         "Theme - Soda SolarizedDark",
         "ExtendedTabSwitcher",
         "TabsShortcuts",
-        "Material Theme",
+        "Materialize",
     ]
 
     sublimious_keymap = [
@@ -84,6 +84,8 @@ class Layer():
         # ----- Selection
         {"keys": ["s"], "category": "selection"},
         {"keys": ["s", "e"], "command": "find_all_under", "description": "expand selection"},
+        {"keys": ["s", "l"], "command": "split_selection_into_lines", "description": "add cursor to lines"},
+
 
         # ----- Buffer
         {"keys": ["b"], "category": "buffer"},
@@ -92,6 +94,12 @@ class Layer():
         {"keys": ["b", "c"], "command": "close", "description": "close buffer"},
         {"keys": ["b", "C"], "command": "close_others", "description": "close other buffers"},
         {"keys": ["b", "K"], "command": "close_others", "description": "kill other buffers"},
+
+        {"keys": ["b", "p"], "category": "push to"},
+        {"keys": ["b", "p", "l"], "command": "carry_file_to_pane", "args": {"direction": "right"}, "description": "right"},
+        {"keys": ["b", "p", "h"], "command": "carry_file_to_pane", "args": {"direction": "left"}, "description": "left"},
+        {"keys": ["b", "p", "j"], "command": "carry_file_to_pane", "args": {"direction": "down"}, "description": "down"},
+        {"keys": ["b", "p", "k"], "command": "carry_file_to_pane", "args": {"direction": "up"}, "description": "up"},
 
         # ----- Toggles
         {"keys": ["t"], "category": "toggles"},

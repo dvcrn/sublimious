@@ -4,7 +4,7 @@ class Layer():
     required_packages = [
         "SublimeLinter-php",
         "Phpcs",
-        "Laravel Blade Highlighter"
+        # "Laravel Blade Highlighter"
     ]
 
     sublimious_keymap = []
