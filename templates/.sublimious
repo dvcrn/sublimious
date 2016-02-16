@@ -44,8 +44,8 @@ user_config = {
 
     # Style!
     # Uncomment the following lines to overwrite the basic appearance and color
-    # "theme": "Material-Theme.sublime-theme",
-    # "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    # "color_scheme": "Packages/Materialize/schemes/Material One Dark.tmTheme",
+    # "theme": "Material Brogrammer.sublime-theme",
     # "font_face": "Hack",
     # "font_size": 18,
 

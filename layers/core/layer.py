@@ -17,7 +17,7 @@ class Layer():
         "Theme - Soda SolarizedDark",
         "ExtendedTabSwitcher",
         "TabsShortcuts",
-        "Material Theme",
+        "Materialize",
     ]
 
     sublimious_keymap = [

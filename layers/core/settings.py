@@ -1,6 +1,8 @@
 {
-    "theme": "Material-Theme.sublime-theme",
-    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    "color_scheme": "Packages/Materialize/schemes/Material One Dark.tmTheme",
+    "theme": "Material One Dark.sublime-theme",
+    "material_theme_small_tab": True,
+    "material_theme_accent_lime": True,
 
     "font_face": "Hack",
     "font_size": 14,
