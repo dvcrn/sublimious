@@ -5,7 +5,8 @@ class Layer():
         "SublimeREPL",
         "Leiningen",
         "Enhanced Clojure",
-        "ClojureDocSearch"
+        "ClojureDocSearch",
+        "Parinfer"
     ]
 
     sublimious_keymap = []
