@@ -6,6 +6,8 @@
 Sublimious is SublimeText 3 configuration system inspired by spacemacs and based around VIM.
 ```
 
+__NOTE:__ Due to the SublimeTexts uncertain future and slow development this project has been frozen and development shifted to atom with [proton](https://github.com/dvcrn/proton). If ST3's development picks up and long needed features are getting implemented, I will continue this project. Until then, PRs are welcome!
+
 ![Shortcuts](http://i.imgur.com/uvDjXNf.png)
 
 ### Install
