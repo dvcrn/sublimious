@@ -114,6 +114,11 @@ class SpaceListener(sublime_plugin.EventListener):
 
         if self.help_timeout:
             self.help_timeout.cancel()
+
+        if self.settings["shortcut_overlay_timeout"] == 0:
+            self.show_help()
+            return
+
         self.help_timeout = threading.Timer(self.settings["shortcut_overlay_timeout"], self.show_help)
         self.help_timeout.start()
 
