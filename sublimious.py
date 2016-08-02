@@ -44,7 +44,7 @@ class Sublimious():
 
         # Delete all settings except Package Control
         for f in filelist:
-            if "Package Control" in f:
+            if "Package Control" in f or "Preferences" in f:
                 continue
 
             os.remove(f)
