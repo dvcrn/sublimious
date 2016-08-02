@@ -55,32 +55,11 @@ Sublimious tries to add vim-like keybindings for every plugin possible. Sidebar 
 - after changing your .sublimious file, hit `<spc> _ r` to re-feed your .sublimious config into sublimetext. All changes will be reloaded immediately. This includes packages, settings and layers.
 
 
-### To-Dos:
+### Contributing
 
-- [x] get a basic version with space keybindings running
-- [x] implement spacemacs-like shortcut helper
-- [x] add README files for each layer
-- [x] add a simple screenshot to README.md
-- [x] add config for helper timeout to .sublimious
-- [x] find a way to configure layers right out of .sublimious config
-- [x] make `f <spc>` work
-- [x] make `<spc> p f` work
-- [x] add easier descriptions for commands
-- [x] submit to package control
-- [x] add install instructions to README
-- [x] add a better default .sublimious
-- [x] find a way to tell Package Control to reload (https://github.com/wbond/package_control/issues/997#issuecomment-141457037). This is needed to trigger pc after sublimious modified the pc settings file.
-- [x] add option to reload .sublimious (trigger all layer collections, writings, and package control reload)
-- [x] add option to define custom commands / functions inside layers
-- [x] fix initial installation process (currently throwing a ton of errors)
-- [ ] add option to add custom bindings to sublimious (e.g. user wants to bind action_123 to combination yyy). Should support both, sublimes system and sublimious system
-- [ ] add option to pass parameters to a layer (eg `{layer: javascript, options: {foo:bar}}`)
-- [ ] add option to execute / register functions from within .sublimious (e.g. user adds `def xxx` and wants to bind that function to combination yyy)
-- [ ] allow multiple commands bound to the same key combination
-- [ ] adjust the shortcut helper's width automagically
-- [ ] ship Hack as default font and use it (possible?). If not, find a good preinstalled font and use that as default
-- [ ] find a way to bind content specific actions to a keybinding. (e.g. `<space> m` will always list actions based on the current syntax. In javascript this could list `format javascript code` and in python `autoflake8`)
+There are a lot of things to do. Please check out the [issue tracker](https://github.com/dvcrn/sublimious/issues) and feel free to submit a pull request. 
 
+For contributing guidelines, make sure you read the [CONTRIBUTING.md](https://github.com/dvcrn/sublimious/blob/master/.github/CONTRIBUTING.md) document.
 
 ### License
 
