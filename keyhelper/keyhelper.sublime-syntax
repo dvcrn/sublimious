@@ -1,0 +1,13 @@
+%YAML 1.2
+---
+name: Keyhelper
+comment: sublimious keyhelper syntax
+scope: sublimious.source
+contexts:
+  main:
+    - match: (\[[a-zA-Z0-9_\/\<\>]*\])
+      scope: keybinding
+    - match: (\+[a-zA-Z0-9_\/\<\>]*)
+      scope: category
+    - match: ([a-zA-Z0-9_\/\ ]*)
+      scope: description

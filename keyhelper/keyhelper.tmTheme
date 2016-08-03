@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+<dict>
+  <key>author</key>
+  <string>David Mohl (dvcrn)</string>
+  <key>name</key>
+  <string>KeyHelper</string>
+  <key>semanticClass</key>
+  <string>theme.sublimious.keyhelper</string>
+  <key>colorSpaceName</key>
+  <string>sRGB</string>
+  <key>settings</key>
+  <array>
+    <dict>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string>#272B33</string>
+        <key>caret</key>
+        <string>#528BFF</string>
+        <key>foreground</key>
+        <string>#A6B2C0</string>
+        <key>invisibles</key>
+        <string>#747369</string>
+        <key>lineHighlight</key>
+        <string>#2B313A</string>
+        <key>selection</key>
+        <string>#3D4350</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Keybinding</string>
+      <key>scope</key>
+      <string>keybinding</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#57B6C2</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Description</string>
+      <key>scope</key>
+      <string>description</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#E5C17C</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Category</string>
+      <key>scope</key>
+      <string>category</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#D2945D</string>
+      </dict>
+    </dict>
+
+  </array>
+  <key>uuid</key>
+  <string>32bd64fa-d60a-4858-a5fc-5164cc49a2b8</string>
+  <key>comment</key>
+  <string>Work in progress</string>
+</dict>
+</plist>
