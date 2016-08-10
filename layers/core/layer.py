@@ -69,7 +69,7 @@ class Layer():
         {"keys": ["p", "c"], "command": "advanced_new_file_new", "description": "create file"},
         {"keys": ["p", "R"], "command": "reveal_in_side_bar", "description": "reveal file"},
         {"keys": ["p", "s"], "command": "show_panel", "args": {"panel": "find_in_files"}, "description": "search file"},
-        {"keys": ["/"], "command": "show_panel", "args": {"panel": "find_in_files"}, "description": "create file"},
+        {"keys": ["/"], "command": "show_panel", "args": {"panel": "find_in_files"}, "description": "smart search"},
         {"keys": ["p", "p"], "command": "prompt_select_workspace", "args": {}, "description": "switch project"},
 
         # ----- Buffers
