@@ -2,7 +2,10 @@ class Layer():
     name = "Go"
 
     required_packages = [
-        "GoSublime"
+        "GoSublime",
+        "SublimeLinter-contrib-golint",
+        "SublimeLinter-contrib-govet",
+        "SublimeLinter-contrib-gotype"
     ]
 
     sublimious_keymap = []
