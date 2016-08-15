@@ -18,6 +18,7 @@ class Layer():
         "ExtendedTabSwitcher",
         "TabsShortcuts",
         "Materialize",
+        "AceJump"
     ]
 
     sublimious_keymap = [
@@ -45,10 +46,10 @@ class Layer():
         {"keys": ["w", "8"], "command": "focus_group", "description": "focus window 8", "args": {"group": 7}},
         {"keys": ["w", "9"], "command": "focus_group", "description": "focus window 9", "args": {"group": 8}},
 
-        {"keys": ["l"], "command": "travel_to_pane", "description": "focus right pane", "args": {"direction": "right"}},
-        {"keys": ["h"], "command": "travel_to_pane", "description": "focus left pane", "args": {"direction": "left"}},
-        {"keys": ["j"], "command": "travel_to_pane", "description": "focus down pane", "args": {"direction": "down"}},
-        {"keys": ["k"], "command": "travel_to_pane", "description": "focus up pane", "args": {"direction": "up"}},
+        {"keys": ["w", "l"], "command": "travel_to_pane", "description": "focus right pane", "args": {"direction": "right"}},
+        {"keys": ["w", "h"], "command": "travel_to_pane", "description": "focus left pane", "args": {"direction": "left"}},
+        {"keys": ["w", "j"], "command": "travel_to_pane", "description": "focus down pane", "args": {"direction": "down"}},
+        {"keys": ["w", "k"], "command": "travel_to_pane", "description": "focus up pane", "args": {"direction": "up"}},
 
         {"keys": ["0"], "command": "focus_side_bar", "description": "focus side bar"},
         {"keys": ["1"], "command": "focus_group", "description": "focus window 1", "args": {"group": 0}},
@@ -113,6 +114,13 @@ class Layer():
         {"keys": ["_"], "category": "meta"},
         {"keys": ["_", "r"], "command": "reload_sublimious", "description": "reload .sublimious"},
         {"keys": ["_", "e"], "command": "open_sublimious_config", "description": "edit .sublimious"},
+
+        # ----- ace jump
+        {"keys": ["j"], "category": "jump"},
+        {"keys": ["j", "j"], "command": "ace_jump_char", "description": "jump to char"},
+        {"keys": ["j", "w"], "command": "ace_jump_word", "description": "jump to word"},
+        {"keys": ["j", "l"], "command": "ace_jump_line", "description": "jump to line"},
+        {"keys": ["<space>"], "command": "ace_jump_char", "description": "jump to char"},
     ]
 
     sublime_keymap = [
