@@ -6,8 +6,7 @@ class Layer():
         "Package Control",
         "Vintage-Origami",
         "DocBlockr",
-        "Vintageous",
-        "VintageousPluginSurround",
+        "Six",
         "Origami",
         "SublimeLinter",
         "Surround",
@@ -125,10 +124,7 @@ class Layer():
 
     sublime_keymap = [
         # Close everything with ESC
-        {"keys": ["f", "d"], "command": "_enter_normal_mode", "args": {"mode": "mode_insert"}, "context": [{"key": "vi_insert_mode_aware"}, {"key": "sublimious_chain"}]},
-        {"keys": ["f", "d"], "command": "_enter_normal_mode", "args": {"mode": "mode_visual_line"}, "context": [{"key": "vi_mode_visual_line"}, {"key": "sublimious_chain"}]},
-        {"keys": ["f", "d"], "command": "_enter_normal_mode", "args": {"mode": "mode_visual"}, "context": [{"key": "vi_mode_visual"}, {"key": "sublimious_chain"}]},
-
+        { "keys": ["f", "d"], "command": "vim_press_key", "args": {"key": "<Esc>"}, "context": [{"key": "vi_insert_mode_aware"}, {"key": "sublimious_chain"}]},
         {"keys": ["f", "d"], "command": "single_selection", "context": [{"key": "num_selections", "operator": "not_equal", "operand": 1}, {"key": "setting.command_mode"}, {"key": "sublimious_chain"}]},
         {"keys": ["f", "d"], "command": "clear_fields", "context": [{"key": "has_next_field", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}, {"key": "sublimious_chain"}]},
         {"keys": ["f", "d"], "command": "clear_fields", "context": [{"key": "has_prev_field", "operator": "equal", "operand": True}, {"key": "setting.command_mode"}, {"key": "sublimious_chain"}]},
