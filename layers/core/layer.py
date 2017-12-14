@@ -62,6 +62,11 @@ class Layer():
         {"keys": ["8"], "command": "focus_group", "description": "focus window 8", "args": {"group": 7}},
         {"keys": ["9"], "command": "focus_group", "description": "focus window 9", "args": {"group": 8}},
 
+        # Panel resize
+        {"keys": ["r"], "category": "resize"},
+        {"keys": ["r", "c"], "command": "resize_pane", "description": "column ", "args": {"orientation": "cols"}},
+        {"keys": ["r", "r"], "command": "resize_pane", "description": "row ", "args": {"orientation": "rows"}},
+
 
         # ----- Project commands
         {"keys": ["p"], "category": "project"},
