@@ -41,9 +41,11 @@
             "default_initial": "./"
         },
         "SublimeLinter": {
-            "user": {
-                "mark_style": "stippled underline",
-            }
+            "styles": [
+                {
+                    "mark_style": "stippled_underline",
+                }
+            ]
         },
         "Origami": {
             "create_new_pane_if_necessary": False
