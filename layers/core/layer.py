@@ -113,6 +113,7 @@ class Layer():
         {"keys": ["t", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["t", "l"], "command": "toggle_setting", "args": {"setting": "line_numbers"}, "description": "toggle line numbers"},
         {"keys": ["t", "m"], "command": "toggle_minimap", "args": {}, "description": "toggle minimap"},
+        {"keys": ["t", "M"], "command": "toggle_menu", "args": {}, "description": "toggle menu"},
         {"keys": ["t", "T"], "command": "toggle_tabs", "args": {}, "description": "toggle tabs"},
 
         # ----- Meta
